@@ -117,6 +117,17 @@
               {% endif %}
             {% endif %}
           {% endfor %}
+          {% if site.cv_pdf_only %}
+            <!-- Search -->
+            <li class="nav-item {% if page.title == 'cv' %}active{% endif %}">
+                <a class="nav-link" href="{{ 'assets/pdf/my_resume.pdf' | relative_url }}">
+                    cv
+                    {% if page.title == "cv" %}
+                    <span class="sr-only">(current)</span>
+                    {% endif %}
+                </a>
+            </li>
+          {% endif %}
           {% if site.search_enabled %}
             <!-- Search -->
             <li class="nav-item">
