@@ -3,9 +3,10 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: Azhar
+first_name: Mohammed Azharudeen
 middle_name: ''
-last_name: FMD
+last_name: Farook Deen
+email: fmdazhar@gmail.com
 contact_note: >
   You can even add a little note about which of these is the best way to reach you.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
@@ -54,7 +55,7 @@ posts_in_search: true
 bib_search: true
 
 # Dimensions
-max_width: 930px
+max_width: 900px
 
 # TODO: add layout settings (single page vs. multi-page)
 
