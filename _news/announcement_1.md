@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2019-05-15 12:00:00+0200
 inline: true
 related_posts: false
 ---
 
-A simple inline announcement.
+Completed B.Tech in Mechanical Engineering (Specialization in Computational Techniques; Minor in Electronics and Communication Engineering) at Shiv Nadar University, India.  
