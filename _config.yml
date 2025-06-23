@@ -7,14 +7,17 @@ first_name: Mohammed Azharudeen
 middle_name: ""
 last_name: Farook Deen
 email: fmdazhar@gmail.com
-contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+# contact_note: >
+#   You can even add a little note about which of these is the best way to reach you.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  Robotics engineer with expertise in deep learning, reinforcement learning,
+  and control systems for real-time humanoid and quadruped platforms. Skilled in
+  simulation (Isaac Sim, MuJoCo), ROS/ROS2, MPC, and Python/C++ development.
 footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
+keywords: robotics, deep learning, reinforcement learning, control engineering,
+  Isaac Sim, MuJoCo, ROS, ROS2, MPC, Python, C++, humanoid robots, quadrupeds,
+  real-time systems, UR5e, Unitree A1 # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🎓 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
