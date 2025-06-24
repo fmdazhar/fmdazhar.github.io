@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Giving up sucks! Never give up without a fight💪🏽
+subtitle: Never give up without a fight💪🏽
 
 profile:
   align: right
