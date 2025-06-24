@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Never give up without a fight💪🏽
+subtitle: Never give up without a fight!
 
 profile:
   align: right
