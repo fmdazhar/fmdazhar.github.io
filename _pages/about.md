@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Never give up without a fight!
+subtitle:  I'm excited about building intelligent robots.
 
 profile:
   align: right
@@ -32,4 +32,11 @@ announcements:
 
 Hey there! 👋
 
-I’m Azhar, a **Robotics Engineer🤖** (M.Sc. Robotic Systems Engineering, RWTH Aachen) obsessed with melding **deep learning**, **reinforcement learning**, and **optimal control** to create agile and collaborative robots.
+I'm a **Robotics Engineer🤖**(M.Sc. Robotic Systems Engineering, RWTH Aachen) passionate about blending **deep learning**, **reinforcement learning**, and **optimal control** to build intelligent robots capable of agile and meaningful interactions with their environments. 
+
+As an intern in Fraunhofer IPA, I integrated real-time **reinforcement learning** and **imitation learning** pipelines, and designed teleoperation systems  for human-in-the-loop training of **arm manipulator** robot. My Master's thesis, conducted jointly with RWTH DSME and RWTH GUT, tackled the challenges **quadruped robots** face when navigating deformable terrains, employing NVIDIA Isaac Sim for simulation and a reinforcement learning framework to enable resilient and adaptive locomotion strategies.
+
+Previously, at RWTH IRT and RWTH ika, I contributed to classical control systems including **Model Predictive Control** and optimization frameworks, enhancing trajectory planning and autonomous driving technologies. 
+
+My earlier research at IIITDM involved acoustic-driven microscale fluid dynamics, culminating in multiple high-impact journal publications.
+
