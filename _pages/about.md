@@ -38,5 +38,5 @@ As an intern in Fraunhofer IPA, I integrated real-time learning pipelines, devel
 
 My Master's thesis, conducted jointly with RWTH DSME and RWTH GUT, tackled the challenges **quadruped robots** face when navigating deformable terrains, employing **NVIDIA Isaac Sim** for simulation and a reinforcement learning framework to enable resilient and adaptive locomotion strategies.
 
-Previously, at RWTH IRT and RWTH ika, I contributed to classical control systems including **Model Predictive Control** and optimization frameworks, enhancing trajectory planning and autonomous driving technologies. My earlier research at IIITDM involved acoustic-driven microscale fluid dynamics, culminating in multiple high-impact journal publications.
+Previously, at RWTH IRT and RWTH ika, I contributed to classical control systems including **Model Predictive Control** and optimization frameworks, enhancing trajectory planning and autonomous driving technologies. My earlier research at IIITDM involved acoustic-driven microscale fluid dynamics, culminating in multiple high-impact journal publications, before transitioning to robotics.
 
