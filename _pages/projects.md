@@ -11,6 +11,10 @@ horizontal: false
 
 <!-- pages/projects.md -->
 <div class="projects">
+<!-- Placeholder when page is not ready -->
+  <div class="coming-soon">
+    <p><strong>Coming soon!</strong> This page is still under construction. Check back later for exciting projects.</p>
+  </div>
 {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
   {% for category in page.display_categories %}

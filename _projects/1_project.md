@@ -19,15 +19,38 @@ Launch files bring up RViz, drivers and optional hand-tracking so you can drive 
   Live dual-arm pick-and-place demo (with webcam hand tracking).
 </div>
 
-### What’s inside
+### Gesture Control Details
 
-* **Teleop modes:**  
-  * `teleop-keyboard` service for classical keyboard control  
-  * `teleop-cam` service with MediaPipe gesture recognition
-* **ROS 2 Humble workspace:** dual-UR5e launch files, TF tree, RViz config & joint limits  
-* **Independent pipelines:** each hand publishes `Twist` for motion and `String` for gripper, allowing true simultaneous two-arm operation  
-* **Safety & ergonomics:** dead-zones, jitter filtering, single-operator lockout when >2 hands seen  
-* **Dockerised environment:** build via `docker compose build`; graphics forwarded for RViz via X11 forwarding
+The Gesture control mode leverages Google’s MediaPipe Gesture Recognizer task to interpret hand poses in real time, enabling intuitive, vision-based command of the UR5e arms ([ai.google.dev](https://mediapipe-studio.webapps.google.com/demo/gesture_recognizer)). The pipeline uses a palm detection model followed by a 21‑landmark hand model to track both left and right hands simultaneously ([mediapipe.readthedocs.io](https://ai.google.dev/edge/mediapipe/solutions/guide)).
+
+Recognized gestures include:
+
+**Activation / Deactivation**  
+- **Activation Gesture:** `ILoveYou` (🤟) held for ~1 second  
+  On detection, the node sets the current hand pose as the baseline and enters **ACTIVE** mode.  
+- **Deactivation Conditions:**  
+  - Hand leaves the camera view for ~1.3 seconds, or  
+  - `Closed_Fist` (✊) held for ~1.3 seconds  
+  The node then clears the baseline and enters **INACTIVE** mode. In INACTIVE mode, no commands are published.
+
+**Motion Control (ACTIVE only)**  
+- **Translation:** continuous hand movement within a 2D plane is mapped to end-effector linear velocity:  
+  - X-axis ← left/right hand moves  
+  - Y-axis ← forward/back hand moves  
+  - Z-axis ← near/far hand moves  
+- **Rotation Gestures (yaw control):**  
+  - `Pointing_Up` (☝️) → positive yaw rate  
+  - `Victory` (✌️) → negative yaw rate  
+- **Sensitivity & Deadzone:** configurable parameters for smooth responsiveness and ignore small jitters.
+
+**Gripper Control (ACTIVE only)**  
+- **Open Gripper:** hold `Thumbs_Up` (👍) for ~1 second
+- **Close Gripper:** hold `Thumbs_Down` (👎) for ~1 second
+- Intermediate or different gestures reset the open/close hold counters to prevent accidental triggers.
+
+
+Each gesture is classified by a lightweight MLP trained on historical fingertip trajectories. Robustness is enhanced through exponential smoothing and dead-zone thresholds, filtering out jitter and ensuring operator safety.
+
 
 
 
