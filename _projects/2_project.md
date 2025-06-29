@@ -41,4 +41,4 @@ All nodes publish overlays and 3-D edge markers for RViz, letting you *see* edge
   Live 3-D edge cloud in RViz.
 </div>
 
-Need the code?  <a href="https://github.com/fmdazhar/neura_ai">Browse the repository on GitHub</a>.
+<!-- Need the code?  <a href="https://github.com/fmdazhar/neura_ai">Browse the repository on GitHub</a>. -->

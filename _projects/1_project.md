@@ -53,5 +53,5 @@ Each gesture is classified by a lightweight MLP trained on historical fingertip 
 
 
 
-
-Need the code?  <a href="https://github.com/fmdazhar/sereact_challenge">Browse the repository on GitHub</a>.
+<!-- 
+Need the code?  <a href="https://github.com/fmdazhar/sereact_challenge">Browse the repository on GitHub</a>. -->
