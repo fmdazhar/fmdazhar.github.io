@@ -446,6 +446,11 @@ ninja.data = [{
           description: "Modular classical &amp; deep-learning edge detection pipeline, featuring real-time C++ and Python nodes.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
+            },},{id: "projects-processing-of-dynamic-object-information-in-mpc-planner",
+          title: 'Processing of Dynamic Object Information in MPC‑Planner',
+          description: "ACDC Research Project",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/7_project/";
             },},{
         id: 'social-email',
         title: 'email',
