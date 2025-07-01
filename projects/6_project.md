@@ -1,80 +1,108 @@
 <!-- ---
 layout: page
-title: project 6
-description: a project with no image
+title: UR5e Manipulator Internship
+description: Internship at Fraunhofer IPA
 img:
 importance: 4
-category: fun
+category: work
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## Project Overview
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+Over a four‑week internship I transformed a basic UR5e simulation into a real‑time, learning‑enabled manipulation platform. Starting with environment setup in ROS + Docker, I progressed through motion‑planning with MoveIt!, Cartesian force/compliance control, and finally a lightweight Flask server that lets reinforcement‑learning agents command the robot at 250 Hz.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+---
+
+## Week 1 – Orientation & Environment Setup
+
+**Highlights**
+
+* Reviewed repository structure and ROS packages.
+* Built a reproducible Docker image with all UR5e, gripper, and controller dependencies pre‑installed.
+* Verified the robot could be launched in RViz + Gazebo straight from the container.
+* Agreed learning goals & deliverables with my supervisors.
 
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+  <div class="col-sm mt-3 mt-md-0">
+      {% include figure.liquid loading="eager" path="/assets/img/project6/rviz_ur5e.jpg" title="UR5e in RViz" class="img-fluid rounded z-depth-1" %}
+  </div>
+  <div class="col-sm mt-3 mt-md-0">
+      {% include figure.liquid loading="eager" path="/assets/img/project6/gazebo_ur5e.jpg" title="UR5e in Gazebo" class="img-fluid rounded z-depth-1" %}
+  </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+  <em>Figure&nbsp;1 –</em> RViz visualisation (left) and Gazebo physics simulation (right) formed the baseline for all later experimentation.
 </div>
+
+---
+
+## Week 2 – Basic Control & Simulation
+
+**Highlights**
+
+* Generated a custom MoveIt! config and tuned IKFast for lightning‑fast inverse kinematics.
+* Bench‑marked position, velocity, and Cartesian controllers supplied by the repo.
+* Logged >200 simulated trajectories to understand joint‑limit and collision‑checking failures.
+
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+  <div class="col-sm mt-3 mt-md-0">
+      {% include figure.liquid loading="eager" path="/assets/img/project6/moveit_path.jpg" title="MoveIt! Cartesian path" class="img-fluid rounded z-depth-1" %}
+  </div>
+  <div class="col-sm mt-3 mt-md-0">
+      {% include figure.liquid loading="eager" path="/assets/img/project6/moveit_success.jpg" title="Planned pose reached" class="img-fluid rounded z-depth-1" %}
+  </div>
 </div>
 <div class="caption">
-    This image can also have a caption. It's like magic.
+  <em>Figure&nbsp;2 –</em> Example MoveIt! pipeline: start pose, planned Cartesian path, and final pose.
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+---
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+## Week 3 – Sensor Integration & Advanced Cartesian Control
+
+**Highlights**
+
+* Switched from high‑level MoveIt! planning to a low‑latency Cartesian controller stack.
+* Integrated wrist force–torque sensor; added a configurable 20 Hz low‑pass filter.
+* Demonstrated compliant motion and hybrid force‑position control on planar contact tasks.
+
+<div class="row">
+  <div class="col-sm mt-3 mt-md-0">
+      {% include figure.liquid loading="eager" path="/assets/img/project6/controller_gui.jpg" title="ROS controller manager" class="img-fluid rounded z-depth-1" %}
+  </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+  <em>Figure&nbsp;3 –</em> Hot‑swapping Cartesian controllers in ROS allowed rapid benchmarking of stiffness vs. compliance.
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+---
 
-{% raw %}
+## Week 4 – Real‑Time Control & RL Interface
 
-```html
+**Highlights**
+
+* Wrote a 150‑LoC Flask micro‑server that streams observations & actions at 250 Hz.
+* Added wrappers that translate sensor arrays into OpenAI‑Gym style states.
+* Ran RL‑powered pick‑and‑place simulations with latency <4 ms end‑to‑end.
+
 <div class="row justify-content-sm-center">
   <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+      {% include figure.liquid loading="eager" path="/assets/img/project6/gripper_open.jpg" title="Gripper open" class="img-fluid rounded z-depth-1" %}
   </div>
   <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+      {% include figure.liquid loading="eager" path="/assets/img/project6/gripper_closed.jpg" title="Gripper closed" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
-```
+<div class="caption">
+  <em>Figure&nbsp;4 –</em> Robotiq Hand‑E gripper synchronised with the arm for force‑controlled grasping.
+</div>
 
-{% endraw %} -->
+---
+
+## Key Takeaways
+
+* **Reproducibility first.** A single, version‑pinned Dockerfile saved countless setup hours.
+* **Incremental testing beats big leaps.** Small, instrumented experiments revealed issues early.
+* **Modularity pays off.** Swapping planners, controllers, and RL algorithms became trivial thanks to clean interfaces.
+
+Feel free to explore the code and detailed logs in the [GitHub repository](https://github.com/your‑repo‑link). Replace the image paths above with your own screenshots (`/assets/img/project6/...`) before publishing. -->
