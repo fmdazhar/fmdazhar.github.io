@@ -489,13 +489,9 @@ We close with a note of appreciation for the collaborative spirit and the relent
 ### References
 
 1. Liu, Wenjun, et al. "Gaussian process based model predictive control for overtaking in autonomous driving." *Frontiers in Neurorobotics* 15 (2021): 723049.
-
 2. B. Alrifaee. "Networked Model Predictive Control for Vehicle Collision Avoidance." PhD thesis, RWTH Aachen University, 2017.
-
 3. Palatti, Jiyo, et al. "Planning for safe abortable overtaking maneuvers in autonomous driving." 2021 IEEE International Intelligent Transportation Systems Conference (ITSC). IEEE, 2021.
-
 4. Kabzan, J., Hewing, L., Liniger, A., & Zeilinger, M.N. "Learning-based model predictive control for autonomous racing." IEEE Robotics and Automation Letters, 2019, 4(4), pp.3363-3370.
-
 5. Minderhoud, M. M., &amp; Bovy, P. H. L. "Extended time-to-collision measures for road traffic safety assessment". Accident Analysis &amp; Prevention. Retrieved September 11, 2022
 6. Krishna, Madhava & Kalra, Prem. (2002) "Detection, Tracking and Avoidance of Multiple Dynamic Objects". Journal of Intelligent and Robotic Systems. 33. 371-408. 10.1023/A:1015508906105.
 7. Jiménez, F., Naranjo, J. E., &amp; García, F. (2012) "An improved method to calculate the time-to-collision of two vehicles". International Journal of Intelligent Transportation Systems Research, 11(1), 34–42.

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Dual Arm Teleoperation Workspace
+title: Dual Arm Teleoperation with ROS" Humble
 description: Dual-UR5e teleoperation in ROS2 via keyboard or real-time MediaPipe hand-tracking, packaged in Docker.
 img: assets/img/teleop_thumbnail.png   # ← replace with your own thumbnail
 importance: 2

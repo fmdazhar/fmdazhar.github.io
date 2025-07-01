@@ -1,81 +1,82 @@
-<!-- ---
+---
 layout: page
-title: project 3 with very long name
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
-importance: 3
+title: Investigating Robot Learning of Quadrupedal Locomotion on Deformable Terrain
+description: GPU-accelerated Isaac Sim workspace that couples Position-Based Dynamics (PBD) gravel simulation with a curriculum-driven PPO policy to achieve robust, energy-efficient Unitree-A1 locomotion across soft, uneven, and granular ground.
+img: assets/img/quadruped_teleop_thumbnail.png      
+importance: 2
 category: work
+giscus_comments: false
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+This project is the deliverable of my M.Sc. thesis at RWTH Aachen.  
+It packages **an end-to-end pipeline—simulation, reinforcement-learning (RL), evaluation, and visualisation—for training quadruped robots to handle deformable terrain** such as sand, gravel, and soft soil.  
+Built around **NVIDIA Isaac Sim 2024** and **OmniIsaacGymEnvs**, the workspace brings together:
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+* **Position-Based Dynamics (PBD)** particles for real-time granular media.  
+* Massive-parallel **Proximal Policy Optimization** (PPO) with 2 048 robots per rollout.  
+* An automatic **terrain curriculum** (20 columns × 10 levels) that graduates from rigid slopes to particle-filled depressions.  
+* **Domain & dynamics randomisation** (friction, density, adhesion, external pushes) for sim-to-real transfer.  
+* Integrated metrics dashboards and helper scripts for reward-curve replay and inference video capture.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+> *“The adoption of PBD allowed for a more accurate and computationally efficient simulation of granular interactions, facilitating real-time training and testing of RL policies.”* :contentReference[oaicite:0]{index=0}
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+  <div class="col-sm mt-3 mt-md-0">
+      {% include video.liquid path="assets/video/quadruped_gravel_demo.mp4" class="img-fluid rounded z-depth-1" controls=true %}
   </div>
 </div>
-```
+<div class="caption">
+  One-take inference run: 1 m/s trot through a 6 × 6 m gravel pit.
+</div>
 
-{% endraw %} -->
+---
+
+### Key Contributions
+
+* **Unified Deformable-Terrain Simulator** – An Isaac Sim extension that spawns ∼200 k PBD particles inside mesh “depressions”, refits BVH on-the-fly, and exports reusable USD worlds. :contentReference[oaicite:1]{index=1}  
+* **Two-Stage RL Curriculum** –  
+  * **Phase 1**: 2 000 epochs on rigid terrain; velocity curriculum + airtime / collision / stumble rewards.  
+  * **Phase 2**: gravel only; dynamic particle randomisation every 20 s to boost policy generality. :contentReference[oaicite:2]{index=2}  
+* **Velocity-Aware Command Expansion** – Command ranges auto-scale when average reward > 80 % of max, enabling safe exploration without premature falls. :contentReference[oaicite:3]{index=3}  
+* **End-to-End Benchmark** – Reproduced “Learning to Walk in Minutes” baseline in Isaac Gym **and** Isaac Sim, matching reward curves within ±2 %. :contentReference[oaicite:4]{index=4}  
+
+---
+
+### Simulation & RL Pipeline
+
+| Component | Details |
+|-----------|---------|
+| **Robot Model** | Unitree A1 URDF, 12 DoF, hard-stop limits, PD-torque control. |
+| **State Vector (38 D)** | Base lin/ang vel, gravity vec, 12 joint pos + vel, previous action, 192-cell height grid. |
+| **Action Space (12 D)** | Joint-angle offsets; torques clipped to ±80 N m. |
+| **PPO Hyper-params** | γ = 0.99, GAE λ = 0.95, 3 × [512, 256, 128] ELU MLP, 5 mini-epochs, 16 384 × 24 steps/batch. |
+| **Rewards** | Velocity tracking, torque/accel regularisers, stumble penalty, peak-contact penalty; airtime term disabled in Phase 2. |
+
+---
+
+### Terrain & Curriculum
+
+* **Rigid Section** – Mix of slopes (±25 °), stairs (0.3 m × 0.2 m), and 0.2 m random obstacles. :contentReference[oaicite:5]{index=5}  
+* **Granular Section** – Central 4 × 4 m pit filled with 2 mm PBD spheres (ρ = 3 000 kg m⁻³, μ = 0.35).  
+* Agents graduate when average episode reward exceeds threshold; otherwise regress, preventing catastrophic forgetting. :contentReference[oaicite:6]{index=6}  
+
+---
+
+### Results Highlights
+
+* **Tracking** – RMS linear-velocity error < 0.05 m s⁻¹ on flat; 0.07 m s⁻¹ on gravel. :contentReference[oaicite:7]{index=7}  
+* **Energy** – Cost-of-transport reduced 12 % vs. rigid-terrain-only policy. :contentReference[oaicite:8]{index=8}  
+* **Contact Safety** – < 2 % of timesteps exceed 500 N foot force after Phase 2 tuning. :contentReference[oaicite:9]{index=9}  
+* **Robustness** – Survived random lateral pushes of 1 m s⁻¹ with 96 % recovery rate. :contentReference[oaicite:10]{index=10}  
+
+---
+
+### Future Directions
+
+* **Privileged student–teacher transfer** for rapid sim-to-real adaptation.  
+* **Multi-gait library** (walk, trot, bound) conditioned on speed command.  
+* **SAC + online adaptation** to cut sample complexity on CPU-bound particle sims. :contentReference[oaicite:11]{index=11}  
+
+
+Need the code?  <a href="https://github.com/yourusername/quadruped_deformable_rl">Browse the repository on GitHub</a>. 
+
