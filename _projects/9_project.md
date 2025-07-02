@@ -37,6 +37,24 @@ a UR5e + Robotiq Hand-E gripper, full contact dynamics in MuJoCo, synchronized m
 
 ---
 
+
+## 1.1  Difficulty Presets
+
+The environment ships with **three ready-to-use difficulty presets** so you can benchmark algorithms under progressively tougher conditions without touching low-level code.
+
+
+| Level           | Scenario Highlights                                                                                                                                                 | Typical Use-Case                                                |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| **Easy**   | Fixed port orientation, modest XYZ randomization, and a rich observation vector (TCP pose, velocity, force-torque, connector & port poses).                         | Rapid prototyping & controller tuning.                          |
+| **Medium** | Adds in-plane & vertical port shifts plus reduced observations; the agent still sees force-torque and connector pose but must cope with larger spatial variability. | Early learning-from-pixels or demo-bootstrapped RL experiments. |
+| **Hard**   | Full 6-DoF port orientation randomization and a minimalist observation set (no connector or port pose), stressing contact sensing and visual feedback.              | Final performance evaluation & sim-to-real robustness tests.    |
+
+<br>
+
+Switching level is as simple as selecting the corresponding Gymnasium ID in your training script, everything else (rendering, logging, reward structure) stays consistent.
+
+---
+
 ## 2  Modular Control Stack
 
 * **Configurable PD/Impedance** controller with inverse-dynamics, pseudo-inverse, and Jacobian-transpose modes.  

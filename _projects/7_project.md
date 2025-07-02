@@ -3,9 +3,18 @@ layout: page
 title: "Processing of Dynamic Object Information in MPC‑Planner"
 description: "ACDC Research Project"
 img: assets/img/acdc-thumbnail.png
-importance: 4
+importance: 6
 category: work
 giscus_comments: false
+---
+
+
+### References
+
+* [Download the full presentation (PDF)](/assets/pdf/Group9_MPC.pdf){:target="_blank" rel="noopener"}  
+
+Need the code? <a href="https://github.com/fmdazhar/acdc-research-project-ss23.git">Browse the repository on GitHub</a>
+
 ---
 
 ### Abstract

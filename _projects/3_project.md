@@ -139,20 +139,27 @@ Built around **NVIDIA Isaac Sim** and **OmniIsaacGymEnvs**, the workspace brings
 ---
 
 ### Results Highlights
+#### Benchmark replication
 
-* **Tracking** – RMS linear-velocity error < 0.05 m s⁻¹ on flat; 0.07 m s⁻¹ on gravel. 
-* **Energy** – Cost-of-transport reduced 12 % vs. rigid-terrain-only policy.
-* **Contact Safety** – < 2 % of timesteps exceed 500 N foot force after Phase 2 tuning.
-* **Robustness** – Survived random lateral pushes of 1 m s⁻¹ with 96 % recovery rate.
+* **Cross‑engine parity:** Re‑implemented the “Learning to Walk in Minutes” baseline in both **Isaac Gym** and **Isaac Sim**. Average episodic‑reward curves overlap within ±2 %, confirming that migrating to Isaac Sim’s richer GUI incurs no learning penalty. 
+
+#### Key metrics summary
+
+| Metric              | Baseline | Phase 1   | Phase 2   |
+| ------------------- | -------- | --------- | --------- |
+| Mean power (W) ↓    | 309.9    | **179.1** | **199.9** |
+| Cost of transport ↓ | 2.00     | **0.38**  | \~0.42    |
+| Contact force (N)   | 18.3     | **30.9**  | 27.8 †    |
+| Base ang‑vel MSE ↓  |  –       | 1.75      | **1.69**  |
+| DOF‑pos MSE ↓       |  –       | 1.39      | **1.33**  |
+
+† Mean over all four legs.
+
+> **Bottom line:** The curriculum‑driven PPO controller cuts energy per metre by >80 % on rigid ground while retaining stability on loose gravel – to our knowledge the first Isaac Sim quadruped successfully demonstrated on fully deformable PBD terrain.
+
 
 ---
 
-### References
-
-* [Download the full thesis (PDF)](/assets/pdf/thesis.pdf){:target="_blank" rel="noopener"}  
-* [Download the thesis presentation (PPTX)](https://docs.google.com/presentation/d/1ToU-vxQdC7f644G2BSDjZgR_LJkHxd22/edit?usp=sharing&ouid=107343621726063156502&rtpof=true&sd=true){:target="_blank" rel="noopener"}  
-
----
 
 ### Ongoing Work
 * Integrate **multiscale granular‑media model** for accurate representation
@@ -163,6 +170,12 @@ Built around **NVIDIA Isaac Sim** and **OmniIsaacGymEnvs**, the workspace brings
 
 
 ---
+
+### References
+
+* [Download the full thesis (PDF)](/assets/pdf/thesis.pdf){:target="_blank" rel="noopener"}  
+* [Download the thesis presentation (PPTX)](https://docs.google.com/presentation/d/1ToU-vxQdC7f644G2BSDjZgR_LJkHxd22/edit?usp=sharing&ouid=107343621726063156502&rtpof=true&sd=true){:target="_blank" rel="noopener"}  
+
 
 
 
