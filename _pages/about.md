@@ -30,13 +30,25 @@ announcements:
 
 
 
-Hey there! 👋
+Hey there! 👋  
+I'm a **Robotics Engineer🤖** (M.Sc. Robotic Systems Engineering, RWTH Aachen) passionate about blending **deep learning**, **reinforcement learning**, and **optimal control** to build intelligent robots capable of agile and meaningful interactions with their environments.
 
-I'm a **Robotics Engineer🤖**(M.Sc. Robotic Systems Engineering, RWTH Aachen) passionate about blending **deep learning**, **reinforcement learning**, and **optimal control** to build intelligent robots capable of agile and meaningful interactions with their environments. 
+---
 
-As an intern in Fraunhofer IPA, I integrated real-time learning pipelines, developed a custom Peg-in-Hole **Mujoco** environment with control modules and teleoperation modules for human-in-the-loop training of **arm manipulator** robot. I also implemented **ROS1/ROS2** frameworks for controlling a real robot with a gripper effectively.
+<details>
+  <summary><strong>Read more about my background &amp; projects</strong></summary>
 
-My Master's thesis, conducted jointly with RWTH DSME and RWTH GUT, tackled the challenges **quadruped robots** face when navigating deformable terrains, employing **NVIDIA Isaac Sim** for simulation and a reinforcement learning framework to enable resilient and adaptive locomotion strategies.
+  <div markdown="1">
 
-Previously, at RWTH IRT and RWTH ika, I contributed to classical control systems including **Model Predictive Control** and optimization frameworks, enhancing trajectory planning and autonomous driving technologies. My earlier research at IIITDM involved acoustic-driven microscale fluid dynamics, culminating in multiple high-impact journal publications, before transitioning to robotics.
+  As an intern in Fraunhofer IPA, I integrated real-time learning pipelines, developed a custom Peg-in-Hole **Mujoco** environment with control modules and teleoperation modules for human-in-the-loop training of **arm manipulator** robot. I also implemented **ROS1/ROS2** frameworks for controlling a real robot with a gripper effectively.
+
+  My Master’s thesis, conducted jointly with RWTH DSME and RWTH GUT, tackled the challenges **quadruped robots** face when navigating deformable terrains, employing **NVIDIA Isaac Sim** for simulation and a reinforcement learning framework to enable resilient and adaptive locomotion strategies.
+
+  Previously, at RWTH IRT and RWTH ika, I contributed to classical control systems including **Model Predictive Control** and optimization frameworks, enhancing trajectory planning and autonomous driving technologies. 
+  
+  My earlier research at IIITDM involved acoustic-driven microscale fluid dynamics, culminating in multiple **high-impact journal publications**, before transitioning to robotics.
+
+  </div>
+</details>
+
 

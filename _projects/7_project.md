@@ -3,7 +3,7 @@ layout: page
 title: "Processing of Dynamic Object Information in MPC‑Planner"
 description: "ACDC Research Project"
 img: assets/img/acdc-thumbnail.png
-importance: 1
+importance: 4
 category: work
 giscus_comments: false
 ---

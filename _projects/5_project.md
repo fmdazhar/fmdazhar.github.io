@@ -3,7 +3,7 @@ layout: page
 title: QpSolverCollection — real-time optimal-control toolkit
 description: Work at RWTH IRT - 2
 img: 
-importance: 3
+importance: 6
 category: work
 ---
 

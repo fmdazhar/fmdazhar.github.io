@@ -2,8 +2,8 @@
 layout: page
 title: Peg-in-Hole Simulation & RL Platform
 description: Internship at Fraunhofer IPA - 2
-img: /assets/img/mujoco-3.png
-importance: 5
+img: /assets/img/ipa.png
+importance: 3
 category: work
 ---
 

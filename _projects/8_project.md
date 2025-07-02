@@ -3,7 +3,7 @@ layout: page
 title: Modular Control Pipeline for Real UR5e Manipulator
 description: Internship at Fraunhofer IPA - 1
 img: assets/img/ur5e-7.png
-importance: 4
+importance: 2
 category: work
 ---
 

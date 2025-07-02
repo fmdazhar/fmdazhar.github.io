@@ -11,13 +11,7 @@ horizontal: false
 
 <!-- pages/projects.md -->
 <div class="projects">
-<!-- Placeholder when page is not ready -->
-<div class="coming-soon" style="text-align: center; margin: 2rem 0;">
-  <p style="font-size: 1.5rem; line-height: 1.4;">
-    <strong style="font-size: 2rem;">Coming soon!</strong><br>
-    This page is still under construction. Check back later for exciting projects.
-  </p>
-</div>
+
 {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
   {% for category in page.display_categories %}
