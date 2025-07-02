@@ -44,6 +44,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
+        },{id: "nav-portfolio",
+          title: "portfolio",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/portfolio/";
+          },
         },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
@@ -436,8 +443,8 @@ ninja.data = [{
           section: "News",},{id: "news-attended-automatica-2025-in-munich",
           title: 'Attended automatica 2025 in Munich.',
           description: "",
-          section: "News",},{id: "projects-dual-arm-teleoperation-with-ros-quot-humble",
-          title: 'Dual Arm Teleoperation with ROS&amp;quot; Humble',
+          section: "News",},{id: "projects-dual-arm-teleoperation-with-ros2-humble",
+          title: 'Dual Arm Teleoperation with ROS2 Humble',
           description: "Dual-UR5e teleoperation in ROS2 via keyboard or real-time MediaPipe hand-tracking, packaged in Docker.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
@@ -448,7 +455,7 @@ ninja.data = [{
               window.location.href = "/projects/2_project/";
             },},{id: "projects-investigating-robot-learning-of-quadrupedal-locomotion-on-deformable-terrain",
           title: 'Investigating Robot Learning of Quadrupedal Locomotion on Deformable Terrain',
-          description: "GPU-accelerated Isaac Sim workspace that couples Position-Based Dynamics (PBD) gravel simulation with a curriculum-driven PPO policy to achieve robust, energy-efficient Unitree-A1 locomotion across soft, uneven, and granular ground.",
+          description: "M.Sc. thesis - GPU-accelerated Isaac Sim workspace that couples Position-Based Dynamics (PBD) gravel simulation with a curriculum-driven PPO policy to achieve robust, energy-efficient locomotion across soft, uneven, and granular ground.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
             },},{id: "projects-vessel-dynamics-simulator",
@@ -457,8 +464,8 @@ ninja.data = [{
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
             },},{id: "projects-qpsolvercollection-real-time-optimal-control-toolkit",
-          title: 'QpSolverCollection — real-time optimal-control toolkit',
-          description: "Work at RWTH IRT - 2",
+          title: 'QpSolverCollection — real‑time optimal‑control toolkit',
+          description: "Work at RWTH IRT – 2",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
             },},{id: "projects-processing-of-dynamic-object-information-in-mpc-planner",
