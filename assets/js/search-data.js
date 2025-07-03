@@ -44,13 +44,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "nav-portfolio",
-          title: "portfolio",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/portfolio/";
-          },
         },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
@@ -470,7 +463,7 @@ ninja.data = [{
               window.location.href = "/projects/5_project/";
             },},{id: "projects-processing-of-dynamic-object-information-in-mpc-planner",
           title: 'Processing of Dynamic Object Information in MPC‑Planner',
-          description: "ACDC Research Project",
+          description: "ACDC Research Project - RWTH ika",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
             },},{id: "projects-modular-control-pipeline-for-real-ur5e-manipulator",
