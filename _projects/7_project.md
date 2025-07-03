@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Processing of Dynamic Object Information in MPC‑Planner"
-description: "ACDC Research Project"
+description: "ACDC Research Project - RWTH ika"
 img: assets/img/acdc-thumbnail.png
 importance: 6
 category: work

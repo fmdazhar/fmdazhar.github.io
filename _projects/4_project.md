@@ -65,9 +65,9 @@ $$
 
 
 
----
 
-## Next steps
+
+## Other Work  (FernBin Project)
 
 
 <div class="row justify-content-sm-center">
@@ -76,20 +76,15 @@ $$
   </div>
 </div>
 <div class="caption">
-  Multi-view image observations integrated into the Render. The vertical strip on the right contains the additional image observations from wrist and front cameras to the agent. Together, these streams expand the observation space from purely proprioceptive state vectors to pixel-level visual input.
+  Contributed to developing a simple matplotlib-based simulation of vessel with surrounding traffic for testing vessel dynamics and planning algorithms.
 </div>
 
-## ROS 2 AIS Publisher (FernBin Project)
 
+* A ROS 2 package was implemented for publishing **encrypted AIS** messages tailored to the *FernBin* vessel type. It takes the simulated navigation states from the dynamics core and broadcasts them to ROS2 topics. The node auto‑discovers the simulator via ROS 2 parameters and starts publishing immediately.
 
+* Implemented **Gilbert–Johnson–Keerthi (GJK) collision detection** modules for convex shapes, integrating robust support function routines into the simulation pipeline. Combined with the Expanding Polytope Algorithm (EPA), it provides real‑time penetration depth calculations and collision response hooks.
 
-A new ROS 2 package now publishes **encrypted AIS** messages tailored to the *FernBin* vessel type. It takes the simulated navigation states from the dynamics core and broadcasts them to ROS2 topics.
-
-The node auto‑discovers the simulator via ROS 2 parameters and starts publishing immediately.
-
-* Add 6‑DOF extension (heave/roll/pitch) using the same pattern.
-* Expose a Python wrapper through pybind11 for quick notebooks.
-
+---
 
 Need the code?  <a href="https://github.com/fmdazhar/irt_azhar">Browse the repository on GitHub</a>.
 

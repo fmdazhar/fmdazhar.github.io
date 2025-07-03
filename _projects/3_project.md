@@ -19,12 +19,13 @@ giscus_comments: false
   </div>
 </div>
 <div class="caption">
-  Side-by-side: raw image (left) and detected edge overlay (right).
+  My poster presentation at German Robotics Conference 2025
 </div>
 
 
 > **News (March 2025)** – A preliminary extension of this framework was accepted as a short paper at the **German Robotics Conference 2025 (GRC 2025)**.
-> Read the abstract <a href="/assets/pdf/grc25.pdf" target="_blank" rel="noopener">here</a>.
+> Read the extended abstract <a href="/assets/pdf/grc25.pdf" target="_blank" rel="noopener">here</a>.
+> Read the poster <a href="/assets/pdf/azhar_poster_A0.pdf" target="_blank" rel="noopener">here</a>.
 
 This project is the deliverable of my M.Sc. thesis at RWTH Aachen.  
 It packages **an end-to-end pipeline—simulation, reinforcement-learning (RL), evaluation, and visualisation—for training quadruped robots to handle deformable terrain** such as sand, gravel, and soft soil.  
@@ -111,7 +112,7 @@ Built around **NVIDIA Isaac Sim** and **OmniIsaacGymEnvs**, the workspace brings
   </div>
 </div>
 <div class="caption">
-  Particle parameters were tuned via an empirical angle‑of‑repose test (≈ 30–40° for 10 mm spheres), and μ/ρ/adhesion are randomly perturbed every 20 s during Phase 2 to harden sim‑to‑real.
+  Left:Particle parameters were tuned via an empirical angle‑of‑repose test (≈ 30–40° for 20 mm spheres), and μ/ρ/adhesion are randomly perturbed every 20 s during Phase 2 to harden sim‑to‑real. Right: Initialization of particles into the depressed grid.
 </div>
 
 ---
@@ -133,7 +134,7 @@ Built around **NVIDIA Isaac Sim** and **OmniIsaacGymEnvs**, the workspace brings
   </div>
 </div>
 <div class="caption">
-  Side-by-side: raw image (left) and detected edge overlay (right).
+  Side-by-side: Phase 1 (left) and Phase 2 Terrain Curriculum (right).
 </div>
 
 ---

@@ -31,7 +31,7 @@ A *single* `docker compose up` brings in ROS Noetic, MoveIt!, and all required 
     </div>
 </div>
 <div class="caption">
-    A unified simulation stack: visualisation in RViz (left), physics in Gazebo (middle), and MoveIt! generating collision‑free trajectories (right).
+    A unified simulation stack: visualisation in RViz (left), and physics in Gazebo (right).
 </div>
 ## 2  High‑Fidelity Simulation
 
@@ -48,7 +48,7 @@ Precise URDF tweaks and an updated [IKFast](https://docs.ros.org/en/kinetic/api/
     </div>
 </div>
 <div class="caption">
-    A unified simulation stack: visualisation in RViz (left), physics in Gazebo (middle), and MoveIt! generating collision‑free trajectories (right).
+    MoveIt! generating collision‑free trajectories.
 </div>
 
 ## 3  Advanced Cartesian Control
@@ -91,6 +91,7 @@ The real-robot codebase is split into distinct packages for each device class:
 
 Shared helpers under `utils` keep transformations and ROS messaging consistent across modules. Each component registers with the Flask API so new sensors or tools can be added with minimal glue code.
 
+---
 
 ### Next Steps
 
@@ -102,13 +103,6 @@ The stack is already powering new research in contact‑rich manipulation.  Futu
 
 ---
 
-**See also:**  
-[Peg-in-Hole Simulation & RL Platform](/projects/9_project/)
-
-If you’d like to reproduce the results or build on this foundation, all code is open‑source.[GitHub repository](https://github.com/fmdazhar/ur5e_iff/tree/main/real).
-
----
-
 ## Key Takeaways
 
 * **Reproducibility first.** A single, version‑pinned Dockerfile saved countless setup hours.
@@ -117,6 +111,13 @@ If you’d like to reproduce the results or build on this foundation, all code i
 
 ---
 
+If you’d like to reproduce the results or build on this foundation, all code is open‑source.[GitHub repository](https://github.com/fmdazhar/ur5e_iff/tree/main/).
+
 
 Feel free to open an issue or pull request – collaboration is welcome!
+
+---
+
+**See also:**  
+[Peg-in-Hole Simulation & RL Platform](/projects/9_project/)
 

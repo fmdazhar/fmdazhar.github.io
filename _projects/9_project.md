@@ -43,7 +43,7 @@ a UR5e + Robotiq Hand-E gripper, full contact dynamics in MuJoCo, synchronized m
 The environment ships with **three ready-to-use difficulty presets** so you can benchmark algorithms under progressively tougher conditions without touching low-level code.
 
 
-| Level           | Scenario Highlights                                                                                                                                                 | Typical Use-Case                                                |
+| Level           | Scenario Highlights                                                                                                                                                 |  Use-Case                                                |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
 | **Easy**   | Fixed port orientation, modest XYZ randomization, and a rich observation vector (TCP pose, velocity, force-torque, connector & port poses).                         | Rapid prototyping & controller tuning.                          |
 | **Medium** | Adds in-plane & vertical port shifts plus reduced observations; the agent still sees force-torque and connector pose but must cope with larger spatial variability. | Early learning-from-pixels or demo-bootstrapped RL experiments. |
