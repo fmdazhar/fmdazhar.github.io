@@ -48,7 +48,23 @@ I'm a **Robotics Engineer🤖** (M.Sc. Robotic Systems Engineering, RWTH Aachen)
   
   My earlier research at IIITDM involved acoustic-driven microscale fluid dynamics, culminating in multiple **high-impact journal publications**, before transitioning to robotics.
 
+  <p>For more details, check out my <a href="/projects">Projects page</a>.</p>
+  
   </div>
 </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
