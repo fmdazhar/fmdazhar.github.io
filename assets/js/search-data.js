@@ -461,6 +461,11 @@ ninja.data = [{
           description: "Work at RWTH IRT – 2",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
+            },},{id: "projects-6-axis-ur5e-robot-collision-avoidance-control-with-mink-amp-mujoco",
+          title: '6‑Axis UR5e Robot Collision Avoidance Control with Mink &amp;amp; MuJoCo',
+          description: "Collision‑aware Cartesian control and autonomous pick‑and‑place for a UR5e arm with Robotiq gripper, powered by the open‑source Mink robotics library.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/6_project/";
             },},{id: "projects-processing-of-dynamic-object-information-in-mpc-planner",
           title: 'Processing of Dynamic Object Information in MPC‑Planner',
           description: "ACDC Research Project - RWTH ika",
