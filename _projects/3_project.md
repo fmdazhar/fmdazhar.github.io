@@ -2,7 +2,7 @@
 layout: page
 title: Investigating Robot Learning of Quadrupedal Locomotion on Deformable Terrain
 description: M.Sc. thesis - GPU-accelerated Isaac Sim workspace that couples Position-Based Dynamics (PBD) gravel simulation with a curriculum-driven PPO policy to achieve robust, energy-efficient locomotion across soft, uneven, and granular ground.
-img: assets/img/grc-2.jpg     
+img: assets/img/thesis-2.jpg     
 importance: 1
 category: work
 giscus_comments: false
@@ -11,13 +11,18 @@ giscus_comments: false
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
     {% include figure.liquid loading="eager" path="assets/img/grc-1.jpg"
-       title="RGB input" class="img-fluid rounded z-depth-1" %}
+       title="GRC-1" class="img-fluid rounded z-depth-1" %}
   </div>
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/grc-31.png"
-       title="C++ Canny overlay" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid loading="eager" path="assets/img/grc-2.jpg"
+       title="GRC-2" class="img-fluid rounded z-depth-1" %}
+    <div class="mt-3">
+      {% include figure.liquid loading="eager" path="assets/img/grc-31.png"
+         title="GRC-3" class="img-fluid rounded z-depth-1" %}
+    </div>
   </div>
 </div>
+
 <div class="caption">
   My poster presentation at German Robotics Conference 2025
 </div>
@@ -39,18 +44,9 @@ Built around **NVIDIA Isaac Sim** and **OmniIsaacGymEnvs**, the workspace brings
 
 > *“The adoption of PBD allowed for a more accurate and computationally efficient simulation of granular interactions, facilitating real-time training and testing of RL policies.”*
 
-<div class="row mt-3">
-  <div class="col-sm mt-3 mt-md-0">
-      {% include video.liquid path="assets/video/thesis-1.mp4" class="img-fluid rounded z-depth-1" controls=true %}
-  </div>
-</div>
-<div class="caption">
-  One-take inference run: 1 m/s trot through a 6 × 6 m gravel pit.
-</div>
-
 ---
 
-### Baseline Experiments
+### Motivation - Experiments
 <div class="row mt-3">
   <div class="col-sm mt-3 mt-md-0">
       {% include video.liquid path="assets/video/thesis-4.mp4" class="img-fluid rounded z-depth-1" controls=true %}
@@ -71,17 +67,52 @@ Built around **NVIDIA Isaac Sim** and **OmniIsaacGymEnvs**, the workspace brings
   Yet the moment speed or terrain complexity (gravel or sand‑gravel mix) increased, it failed to stay upright.These early “misadventures” exposed the raw difficulty of deformable‑terrain locomotion and cemented the need for a learned, terrain‑aware policy.  
 </div>
 
+
+
 ---
 
-### Key Contributions
+### Methodology
 
-* **Unified Deformable-Terrain Simulator** – An Isaac Sim extension that spawns ∼200 k PBD particles inside mesh “depressions”, refits BVH on-the-fly, and exports reusable USD worlds.
+* **Deformable-Terrain Simulator for locomotion** – Spawns ∼200 k PBD particles inside mesh “depressions” in Isaac Sim, and refits BVH on-the-fly, with two-way robot-terrain contacts.
 
+
+<div class="row mt-3">
+  <!-- Left column: thesis-3.png on top, thesis-5.mp4 below -->
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/thesis-3.png" 
+       title="Force-vector overlay" 
+       class="img-fluid rounded z-depth-1" %}
+    {% include video.liquid path="assets/video/thesis-5.mp4" 
+       class="img-fluid rounded z-depth-1 mt-3" controls=true %}
+    <div class="caption">
+      Top Left: Particle parameters were tuned via an empirical angle-of-repose test (≈ 30–40° for 20 mm spheres), 
+      and μ/ρ/adhesion are randomly perturbed every 20 s during Phase 2 to harden sim-to-real. 
+      Bottom Left: Initialization of particles into the depressed grid.
+    </div>
+  </div>
+
+  <!-- Right column: thesis-5.png -->
+  <div class="col-sm mt-3 mt-md-0 text-center">
+    {% include figure.liquid loading="eager" path="assets/img/thesis-5.png"
+       title="Rigid vs. deformable terrain snapshots"
+       class="img-fluid rounded z-depth-1 mx-auto d-block w-75" %}
+    <div class="caption">
+      Top Right: poses on rigid ground and compliant terrain respectively (left & right). 
+      Bottom Right: traversal on PBD gravel with height scans highlighted in red.
+    </div>
+  </div>
+</div>
+
+| Component | Details |
+|-----------|---------|
+| **State Vector (188 D)** | Base lin/ang vel, gravity vec, 12 joint pos + vel, previous action, 140-cell height grid. |
+| **Action Space (12 D)** | Joint-angle offsets; torques clipped to ±80 N m. |
+| **Rewards** | Velocity tracking, torque/accel regularisers, stumble penalty, peak-contact penalty; airtime term disabled in Phase 2. |
 
 
 * **Two-Stage RL Curriculum** –  
   * **Phase 1**: 2000 epochs on rigid terrain; velocity curriculum + airtime / collision / stumble / other rewards.  
-  * **Phase 2**: gravel only; dynamic particle material properties randomisation every 20 s to boost policy generality.  
+  * **Phase 2**: gravel only; dynamic particle material properties randomisation every 20 s to boost policy generalization.  
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
     {% include figure.liquid loading="eager" path="assets/img/thesis-1.png" title="Force-vector overlay" class="img-fluid rounded mx-auto d-block w-75 z-depth-1" %}
@@ -90,38 +121,17 @@ Built around **NVIDIA Isaac Sim** and **OmniIsaacGymEnvs**, the workspace brings
 <div class="caption">
   Overall structure of our learning framework.
 </div>
-* **Velocity-Aware Command Expansion** – Command ranges auto-scale when average reward > 80 % of max, enabling safe exploration without premature falls.
-* **End-to-End Benchmark** – Reproduced “Learning to Walk in Minutes” baseline in Isaac Gym **and** Isaac Sim, matching reward curves within ±2 %. 
+* **Velocity-Aware Command Curriculum** – Command ranges auto-scale when average reward > 80 % of max, enabling safe exploration without premature falls.
+* **Benchmark Replication** – Re‑implemented the “Learning to Walk in Minutes” baseline in both **Isaac Gym** and **Isaac Sim**. Average episodic‑reward curves overlap within ±2 %, confirming that migrating to Isaac Sim’s richer GUI incurs no learning penalty. 
+
 
 ---
 
-### Simulation & RL Pipeline
-
-| Component | Details |
-|-----------|---------|
-| **State Vector (188 D)** | Base lin/ang vel, gravity vec, 12 joint pos + vel, previous action, 140-cell height grid. |
-| **Action Space (12 D)** | Joint-angle offsets; torques clipped to ±80 N m. |
-| **Rewards** | Velocity tracking, torque/accel regularisers, stumble penalty, peak-contact penalty; airtime term disabled in Phase 2. |
-
-<div class="row">
-  <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/thesis-3.png" title="Force-vector overlay" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm mt-3 mt-md-0">
-    {% include video.liquid path="assets/video/thesis-5.mp4" class="img-fluid rounded z-depth-1" controls=true %}
-  </div>
-</div>
-<div class="caption">
-  Left:Particle parameters were tuned via an empirical angle‑of‑repose test (≈ 30–40° for 20 mm spheres), and μ/ρ/adhesion are randomly perturbed every 20 s during Phase 2 to harden sim‑to‑real. Right: Initialization of particles into the depressed grid.
-</div>
-
----
-
-### Terrain & Curriculum
+### Terrain Curriculum
 
 * **Rigid Section** – Mix of slopes (±25 °), stairs (0.3 m × 0.2 m), and 0.2 m random obstacles. 
 * **Granular Section** – Central 4 × 4 m pit filled with 2 mm PBD spheres (ρ = 2000 kg m⁻³, μ = 0.35).  
-* Agents graduate when average episode reward exceeds threshold; otherwise regress, preventing catastrophic forgetting. 
+* Agents graduate when average episode reward exceeds threshold; otherwise regress, while preventing catastrophic forgetting. 
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
@@ -137,12 +147,20 @@ Built around **NVIDIA Isaac Sim** and **OmniIsaacGymEnvs**, the workspace brings
   Side-by-side: Phase 1 (left) and Phase 2 Terrain Curriculum (right).
 </div>
 
+
 ---
 
 ### Results Highlights
-#### Benchmark replication
 
-* **Cross‑engine parity:** Re‑implemented the “Learning to Walk in Minutes” baseline in both **Isaac Gym** and **Isaac Sim**. Average episodic‑reward curves overlap within ±2 %, confirming that migrating to Isaac Sim’s richer GUI incurs no learning penalty. 
+
+<div class="row mt-3">
+  <div class="col-12 col-md-10 col-lg-8 mx-auto text-center">
+      {% include video.liquid path="assets/video/thesis-1.mp4" class="img-fluid rounded z-depth-1" controls=true %}
+  </div>
+</div>
+<div class="caption">
+  One-take inference run: 1 m/s trot through a 6 × 6 m gravel pit.
+</div>
 
 #### Key metrics summary
 

@@ -46,11 +46,11 @@ Currently I’m exploring learning-based control for manipulation and locomotion
 
   - **Internship — [Fraunhofer IPA](https://www.ipa.fraunhofer.de/)**  
     Integrated real-time learning (Reinforcement Learning/ Imitation Learning) pipelines; developed custom Peg-in-Hole **MuJoCo** task; control modules for UR5e robot, teleoperation for human-in-the-loop training; **ROS1/ROS2** control for controlling a gripper-equipped arm.
-    <small style="opacity:.8;"><a href="/projects/fraunhofer-ipa">Project page ↗︎</a></small>
+    <small style="opacity:.8;"><a href="/projects/8_project">Project page ↗︎</a></small>
 
   - **Master’s Thesis — [RWTH DSME](https://www.dsme.rwth-aachen.de/) × [RWTH GUT](https://www.gut.rwth-aachen.de/)**  
     Tackled the challenges **quadruped robots** face when navigating deformable terrains, employing **NVIDIA Isaac Sim** for simulation and a reinforcement learning framework to enable resilient and adaptive locomotion strategies.
-    <small style="opacity:.8;"><a href="/projects/thesis-quadruped-deformable-terrain">Project page ↗︎</a></small>
+    <small style="opacity:.8;"><a href="/projects/3_project">Project page ↗︎</a></small>
 
 ### Classical control
 
