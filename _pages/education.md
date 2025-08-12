@@ -8,7 +8,7 @@ nav_order: 6
 ---
 
 
-## RWTH Aachen University
+## RWTH Aachen University {#rwth-aachen-university}
 ### Master of Science, Robotic Systems Engineering
 
 **Compulsory Courses:**
@@ -48,7 +48,7 @@ nav_order: 6
 <br>
 
 
-## Shiv Nadar University
+## Shiv Nadar University {#shiv-nadar-university}
 ### Bachelor of Technology
 #### Major: Mechanical Engineering
 #### Minor: Electronics and Comm. Engineering
@@ -91,7 +91,7 @@ nav_order: 6
 - Operations Research
 - Computer Aided Design and Manufacturing
 - Electromechanics
-- Refrigeration and AAir Conditioning
+- Refrigeration and Air Conditioning
 - Fluid Machinery
 - **Finite Element Methods**
 - **Advanced Computer Programming and Numerical Technique**

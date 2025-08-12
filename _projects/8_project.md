@@ -7,14 +7,37 @@ importance: 2
 category: work
 ---
 
+<div class="row align-items-stretch">
+  <div class="col-md-5 col-sm-12 mt-3 mt-md-0 d-flex flex-column justify-content-center">
+      <div style="max-width: 90%; margin: 0 auto;">
+        {% include video.liquid path="assets/video/ipa.mp4" class="img-fluid rounded z-depth-1" controls=true %}
+      </div>
+      <div class="caption text-center mt-2">
+        Heuristic-based real-world scene for force-sensitive insertion.
+      </div>
+  </div>
+  <div class="col-md-7 col-sm-12 mt-3 mt-md-0 d-flex align-items-center">
+    <p class="mb-0" style="font-size: 1.15rem; line-height: 1.6;">
+      This work was developed in tandem with a high-fidelity simulation platform
+      (see <a href="/projects/9_project/">Peg-in-Hole Simulation & RL Platform</a>),
+      which allowed us to safely prototype and benchmark RL policies in a controlled,
+      reproducible setting before deploying them to the real robot.
+      The real-world setup described here forms the final stage of that pipeline —
+      enabling <strong>online RL with direct sensor feedback</strong> once a policy
+      has passed simulation validation.
+    </p>
+  </div>
+</div>
+
+
 Building a **trustworthy robotic manipulation pipeline** means much more than writing motion‑planning code – it requires repeatable environments, reliable sensing, and tight feedback loops. As I started my internship at Fraunhofer IPA, I designed and validated a full stack that takes a *UR5e* from a clean Docker image all the way to real‑time, online reinforcement‑learning (RL) control.
 
 The journey broke down into four pillars that together form a cohesive project:
 
 1. **Deterministic Workspace** – a ROS + Docker baseline that anyone can spin‑up in minutes.
 2. **High‑Fidelity Simulation** – RViz & Gazebo models (including Robotiq Hand-E gripper integration) tuned to match the physical arm’s kinematics, joint limits, and gripper dynamics.
-3. **Advanced Cartesian Control** – compliant, force‑controlled motion delivered through a hot‑swappable controller suite.
-4. **RL Experiment Server** – a lightweight Flask bridge that streams observations and actions at ≥ 100 Hz.
+3. **Advanced Cartesian Control** – Direct task space control using compliant, force‑controlled motion delivered through a hot‑swappable controller suite.
+4. **RL Experiment Server** – a lightweight Flask bridge that streams observations and actions at 500 Hz.
 5. **Modular Hardware Abstraction** – self-contained packages for the arm, gripper, cameras, and *teleoperation modules* (keyboard & 6-DoF SpaceMouse) that plug into the same control API.
 
 
@@ -52,7 +75,30 @@ Precise URDF tweaks and an updated [IKFast](https://docs.ros.org/en/kinetic/api/
 </div>
 
 ## 3  Advanced Cartesian Control
+To enable real-time, closed-loop policies in reinforcement learning — where actions depend on instantaneous force and pose feedback — we moved from high-level, preplanned MoveIt! trajectories to external Cartesian controllers that allow direct velocity and force commands control at 500 Hz in this instance using UR5e.
+
 Swapping from high-level MoveIt! planning to the open-source [FZI Cartesian Controllers](https://github.com/fzi-forschungszentrum-informatik/cartesian_controllers/tree/ros1) unlocked *force-aware* and *compliance* behaviours from feedbacks.  Real-time force–torque feedback, low-pass filtered at 50 Hz, lets the arm glide across surfaces with constant contact force or actively comply to external pushes.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/ur5e-9.png" title="Cartesian Control Modes Overview" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/ur5e-10.png" title="Operational Space Control Loop" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/ur5e-11.png" title="PD Controller in Cartesian Space" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+<div class="caption">
+    Top: Overview of Cartesian control modes — pure motion, pure force, and hybrid compliance.  
+    Middle left: Control pipeline, mapping task-space forces to joint accelerations via inverse dynamics.  
+    Middle right: Cartesian-space PD controller generating task-space forces from pose error and error rate.  
+</div>
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -117,7 +163,4 @@ If you’d like to reproduce the results or build on this foundation, all code i
 Feel free to open an issue or pull request – collaboration is welcome!
 
 ---
-
-**See also:**  
-[Peg-in-Hole Simulation & RL Platform](/projects/9_project/)
 

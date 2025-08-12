@@ -25,8 +25,10 @@ a UR5e + Robotiq Hand-E gripper, full contact dynamics in MuJoCo, synchronized m
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
-      {% include video.liquid path="assets/video/ipa.mp4" class="img-fluid rounded z-depth-1" controls=true %}
-  </div>
+  {% include video.liquid path="assets/video/ipa.mp4"
+     class="img-fluid w-75 mx-auto d-block rounded z-depth-1"
+     controls=true %}
+</div>
   <div class="col-sm mt-3 mt-md-0">
     {% include figure.liquid loading="eager" path="assets/img/mujoco-3.png" title="Peg-in-hole scene" class="img-fluid rounded z-depth-1" %}
   </div>
