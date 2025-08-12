@@ -430,7 +430,7 @@ ninja.data = [{
           section: "News",},{id: "news-presented-at-the-1st-german-robotics-conference-in-nuremberg",
           title: 'Presented at the 1st German Robotics Conference in Nuremberg.',
           description: "",
-          section: "News",},{id: "news-volunteered-at-the-european-robotics-forum-in-stuttgart-and-took-part-in-company-visits-to-neura-robotics-fraunhofer-ipa-arena-360-and-fanuc",
+          section: "News",},{id: "news-volunteered-at-the-european-robotics-forum-in-stuttgart-and-took-part-in-company-visits-to-neura-robotics-fraunhofer-ipa-arena-2036-and-fanuc",
           title: 'Volunteered at the European Robotics Forum in Stuttgart and took part in company...',
           description: "",
           section: "News",},{id: "news-attended-automatica-2025-in-munich",
