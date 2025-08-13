@@ -182,14 +182,36 @@ Built around **NVIDIA Isaac Sim** and **OmniIsaacGymEnvs**, the workspace brings
 
 ---
 
+### Major Limitation
+
+Due to GPU memory/throughput constraints, we were unable to scale the granular-terrain simulations (PBD particle counts and domain size) beyond the presented setup. Consequently, the amount and diversity of deformable-terrain experience collected during training was limited. Additionally, Isaac Sim currently runs the PBD particle pipeline entirely on the CPU, which introduces a significant bottleneck for large-scale granular simulations. This restricts achievable frame rates and limits the practicality of training on more complex deformable terrains without distributed CPU resources.
+
+---
 
 ### Ongoing Work
-* Integrate **multiscale granular‑media model** for accurate representation
+* **Cloud-scale simulation & training** — Containerize the workspace and orchestrate Isaac Sim + PPO across multi-GPU cloud platforms to scale PBD particle counts/terrain size and expand experience collection.
 * **Terrain‑adaptive velocity curriculum** for enabling high speed locomotion training
 * **Privileged student–teacher transfer** and **adaptation module** for rapid sim-to-real adaptation.  
-* **Multi-gait library** (walk, trot, bound) conditioned on speed command.  
 * **SAC + online adaptation** to cut sample complexity on CPU-bound particle sims.  
 
+<div class="row mt-3">
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/thesis-6.png"
+       title="Terrain-Adaptive Velocity Curriculum"
+       class="img-fluid rounded z-depth-1" %}
+    <div class="caption">
+      Adaptive scaling of command velocity based on real-time terrain difficulty and agent performance.
+    </div>
+  </div>
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/thesis-10.png"
+       title="Adaptation Module"
+       class="img-fluid rounded z-depth-1" %}
+    <div class="caption">
+      Privileged information encoder and adaptation module for estimating environment extrinsics and enabling policy adaptation.
+    </div>
+  </div>
+</div>
 
 ---
 

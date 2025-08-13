@@ -46,19 +46,21 @@ Currently I’m exploring learning-based control for manipulation and locomotion
 
   - **Internship — [Fraunhofer IPA](https://www.ipa.fraunhofer.de/)**  
     Integrated real-time learning (Reinforcement Learning/ Imitation Learning) pipelines; developed custom Peg-in-Hole **MuJoCo** task; control modules for UR5e robot, teleoperation for human-in-the-loop training; **ROS1/ROS2** control for controlling a gripper-equipped arm.<br>
-    <small style="opacity:.8;"><a href="/projects/8_project" target="_blank" rel="noopener">Project page ↗︎</a></small>
-    <small style="opacity:.8;"><a href="/projects/9_project" target="_blank" rel="noopener">Project page ↗︎</a></small>
+    <small style="opacity:.8;"><a href="/projects/8_project" target="_blank" rel="noopener">Project page 1 </a></small>
+    <small style="opacity:.8;"><a href="/projects/9_project" target="_blank" rel="noopener">Project page 2 </a></small>
 
   - **Master’s Thesis — [RWTH DSME](https://www.dsme.rwth-aachen.de/) × [RWTH GUT](https://www.gut.rwth-aachen.de/)**  
     Tackled the challenges **quadruped robots** face when navigating deformable terrains, employing **NVIDIA Isaac Sim** for simulation and a reinforcement learning framework to enable resilient and adaptive locomotion strategies.<br>
+    <small style="opacity:0.75;">
+        Preliminary work accepted for proceedings at the 1st German Robotics Conference (GRC2025), see [Publications](/publications), and a related paper is being finalized for publication in journal. <br> </small>
     <small style="opacity:.8;"><a href="/projects/3_project" target="_blank" rel="noopener">Project page ↗︎</a></small>
 
 ### Classical control
 
   - **Student Assistant — [RWTH IRT](https://www.irt.rwth-aachen.de/cms/~iung/irt/)**  
-    Extended a unified C++ interface from QP to NLP (IPOPT); tools for MPC/NMPC/SQP, autodiff, Hessian regularization, and tests; contributed to **Fernbin** ship-control sims in Python/**ROS2**.  
-    <small style="opacity:.8;"><a href="/projects/4_project" target="_blank" rel="noopener">Project page ↗︎</a></small>
-    <small style="opacity:.8;"><a href="/projects/5_project" target="_blank" rel="noopener">Project page ↗︎</a></small>
+    Extended a unified C++ interface from QP to NLP (IPOPT); tools for MPC/NMPC/SQP, auto-differentiation, Hessian regularization, and tests; contributed to [Fernbin](https://www.fernbin.de/en/) ship-control project in Python/**ROS2**.  
+    <small style="opacity:.8;"><a href="/projects/4_project" target="_blank" rel="noopener">Project page 1 </a></small>
+    <small style="opacity:.8;"><a href="/projects/5_project" target="_blank" rel="noopener">Project page 2 </a></small>
 
 
   - **Research Project — [RWTH ika](https://www.ika.rwth-aachen.de/en/)**  
