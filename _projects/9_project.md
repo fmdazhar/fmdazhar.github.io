@@ -17,6 +17,22 @@ a UR5e + Robotiq Hand-E gripper, full contact dynamics in MuJoCo, synchronized m
 
 ---
 
+## RLPD-Style Training Pipeline
+
+* **Replay buffer** mixes expert demos with online rollouts, supports prioritized & uniform sampling.  
+* JAX/Flax **Ensemble SAC** learner with convolutional encoders for images and FC nets for states.  
+* Actor–Learner split enables asynchronous collection; Docker image ships with GPU + virtual-display support.
+
+<div class="row justify-content-sm-center">
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/mujoco-10.png" title="Multi-camera image observations" class="img-fluid rounded z-depth-1 " %}
+  </div>
+</div>
+<div class="caption">
+  Human-in-the-loop reinforcement-learning pipeline we plan to adopt, inspired by the HIL-SERL[1], [2] approach. 
+</div>
+---
+
 ## 1  Simulation Environment
 
 * MuJoCo scene with calibrated **UR5e arm**, **Hand-E gripper**, male connector, and a female port.  
@@ -38,7 +54,6 @@ a UR5e + Robotiq Hand-E gripper, full contact dynamics in MuJoCo, synchronized m
 </div>
 
 ---
-
 
 ## 1.1  Difficulty Presets
 
@@ -114,21 +129,7 @@ Wrappers support **frame stacking**, normalization, and video logging.
 
 ---
 
-## 5  RLPD-Style Training Pipeline
 
-* **Replay buffer** mixes expert demos with online rollouts, supports prioritized & uniform sampling.  
-* JAX/Flax **Ensemble SAC** learner with convolutional encoders for images and FC nets for states.  
-* Actor–Learner split enables asynchronous collection; Docker image ships with GPU + virtual-display support.
-
-<div class="row justify-content-sm-center">
-  <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/mujoco-10.png" title="Multi-camera image observations" class="img-fluid rounded z-depth-1 " %}
-  </div>
-</div>
-<div class="caption">
-  Human-in-the-loop reinforcement-learning pipeline we plan to adopt, inspired by the HIL-SERL[1], [2] approach. 
-</div>
----
 
 ## Takeaways & Next Steps
 

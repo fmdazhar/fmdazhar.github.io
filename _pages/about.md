@@ -45,22 +45,25 @@ Currently I’m exploring learning-based control for manipulation and locomotion
 ### Learning-based control
 
   - **Internship — [Fraunhofer IPA](https://www.ipa.fraunhofer.de/)**  
-    Integrated real-time learning (Reinforcement Learning/ Imitation Learning) pipelines; developed custom Peg-in-Hole **MuJoCo** task; control modules for UR5e robot, teleoperation for human-in-the-loop training; **ROS1/ROS2** control for controlling a gripper-equipped arm.
-    <small style="opacity:.8;"><a href="/projects/8_project">Project page ↗︎</a></small>
+    Integrated real-time learning (Reinforcement Learning/ Imitation Learning) pipelines; developed custom Peg-in-Hole **MuJoCo** task; control modules for UR5e robot, teleoperation for human-in-the-loop training; **ROS1/ROS2** control for controlling a gripper-equipped arm.<br>
+    <small style="opacity:.8;"><a href="/projects/8_project" target="_blank" rel="noopener">Project page ↗︎</a></small>
+    <small style="opacity:.8;"><a href="/projects/9_project" target="_blank" rel="noopener">Project page ↗︎</a></small>
 
   - **Master’s Thesis — [RWTH DSME](https://www.dsme.rwth-aachen.de/) × [RWTH GUT](https://www.gut.rwth-aachen.de/)**  
-    Tackled the challenges **quadruped robots** face when navigating deformable terrains, employing **NVIDIA Isaac Sim** for simulation and a reinforcement learning framework to enable resilient and adaptive locomotion strategies.
-    <small style="opacity:.8;"><a href="/projects/3_project">Project page ↗︎</a></small>
+    Tackled the challenges **quadruped robots** face when navigating deformable terrains, employing **NVIDIA Isaac Sim** for simulation and a reinforcement learning framework to enable resilient and adaptive locomotion strategies.<br>
+    <small style="opacity:.8;"><a href="/projects/3_project" target="_blank" rel="noopener">Project page ↗︎</a></small>
 
 ### Classical control
 
   - **Student Assistant — [RWTH IRT](https://www.irt.rwth-aachen.de/cms/~iung/irt/)**  
     Extended a unified C++ interface from QP to NLP (IPOPT); tools for MPC/NMPC/SQP, autodiff, Hessian regularization, and tests; contributed to **Fernbin** ship-control sims in Python/**ROS2**.  
-    <small style="opacity:.8;"><a href="/projects/rwth-irt-control-tooling">Project page ↗︎</a></small>
+    <small style="opacity:.8;"><a href="/projects/4_project" target="_blank" rel="noopener">Project page ↗︎</a></small>
+    <small style="opacity:.8;"><a href="/projects/5_project" target="_blank" rel="noopener">Project page ↗︎</a></small>
+
 
   - **Research Project — [RWTH ika](https://www.ika.rwth-aachen.de/en/)**  
     Enhanced autonomous-driving trajectory planning via **MPC**: refined cost functions for dynamic elements; explored hard-constraint collision avoidance.  
-    <small style="opacity:.8;"><a href="/projects/rwth-ika-mpc-planning">Project page ↗︎</a></small>
+    <small style="opacity:.8;"><a href="/projects/7_project" target="_blank" rel="noopener">Project page ↗︎</a></small>
 
 ### Previous research
 

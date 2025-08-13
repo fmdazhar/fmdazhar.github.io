@@ -164,18 +164,14 @@ Built around **NVIDIA Isaac Sim** and **OmniIsaacGymEnvs**, the workspace brings
 
 #### Key metrics summary
 
-| Metric              | Baseline | Phase 1   | Phase 2   |
-| ------------------- | -------- | --------- | --------- |
-| Mean power (W) ↓    | 309.9    | **179.1** | **199.9** |
-| Cost of transport ↓ | 2.00     | **0.38**  | \~0.42    |
-| Contact force (N)   | 18.3     | **30.9**  | 27.8 †    |
-| Base ang‑vel MSE ↓  |  –       | 1.75      | **1.69**  |
-| DOF‑pos MSE ↓       |  –       | 1.39      | **1.33**  |
-
+| Metric†                                   | Benchmark (replicated) | Phase 1 (rigid terrains) | Phase 2 (PBD gravel) |
+|------------------------------------------|------------------------:|-------------------------:|---------------------:|
+| **Base angular vel. (XY) MSE** (mean ± SD) | —                       | 1.7539 ± 4.7669          | 1.6875 ± 1.7753      |
+| **Joint position MSE (all DOFs)** (mean ± SD) | —                     | 1.3894 ± 0.6691          | 1.3297 ± 0.5849      |
+| **Mean power consumption**               | 309.92                  | 179.13                   | 199.89               |
 † Mean over all four legs.
 
-> **Bottom line:** The curriculum‑driven PPO controller cuts energy per metre by >80 % on rigid ground while retaining stability on loose gravel – to our knowledge the first Isaac Sim quadruped successfully demonstrated on fully deformable PBD terrain.
-
+> **Bottom line:** Phase 2 tightens orientation & joint-tracking errors (lower means and much lower std in angular-XY; lower joint-pos MSE), **at a higher power draw** on granular terrain than Phase 1 – to our knowledge the first Isaac Sim quadruped successfully demonstrated on fully deformable PBD terrain.
 
 ---
 
