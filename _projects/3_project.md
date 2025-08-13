@@ -164,11 +164,18 @@ Built around **NVIDIA Isaac Sim** and **OmniIsaacGymEnvs**, the workspace brings
 
 #### Key metrics summary
 
-| Metric†                                   | Benchmark (replicated) | Phase 1 (rigid terrains) | Phase 2 (PBD gravel) |
+<div class="table-responsive" markdown="1">
+
+| Metric  †                                | Benchmark (replicated) | Phase 1 (rigid terrains) | Phase 2 (PBD gravel) |
 |------------------------------------------|------------------------:|-------------------------:|---------------------:|
+| **Mean power consumption**               | 309.92                  | 179.13                   | 199.89               |
+| **Cost of Transport (CoT)**              | 2.00                    | 0.38                     | — *slightly ↑ vs P1* |
+| **Mean foot contact force**              | 18.27                   | 30.87                    | — *slightly ↓ vs P1* |
 | **Base angular vel. (XY) MSE** (mean ± SD) | —                       | 1.7539 ± 4.7669          | 1.6875 ± 1.7753      |
 | **Joint position MSE (all DOFs)** (mean ± SD) | —                     | 1.3894 ± 0.6691          | 1.3297 ± 0.5849      |
-| **Mean power consumption**               | 309.92                  | 179.13                   | 199.89               |
+
+</div>
+
 † Mean over all four legs.
 
 > **Bottom line:** Phase 2 tightens orientation & joint-tracking errors (lower means and much lower std in angular-XY; lower joint-pos MSE), **at a higher power draw** on granular terrain than Phase 1 – to our knowledge the first Isaac Sim quadruped successfully demonstrated on fully deformable PBD terrain.
