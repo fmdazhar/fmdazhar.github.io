@@ -2,7 +2,7 @@
 layout: page
 title: Peg-in-Hole Simulation & RL Platform
 description: Internship at Fraunhofer IPA - 2
-img: /assets/img/ipa.png
+img: /assets/img/mujoco-3.png
 importance: 3
 category: work
 ---
@@ -18,7 +18,7 @@ a UR5e + Robotiq Hand-E gripper, full contact dynamics in MuJoCo, synchronized m
 ---
 
 ## RLPD-Style Training Pipeline
-
+* Pipeline design inspired by the [HIL-SERL framework](https://hil-serl.github.io/), enabling human-in-the-loop interventions during training.
 * **Replay buffer** mixes expert demos with online rollouts, supports prioritized & uniform sampling.  
 * JAX/Flax **Ensemble SAC** learner with convolutional encoders for images and FC nets for states.  
 * Actor–Learner split enables asynchronous collection; Docker image ships with GPU + virtual-display support.
@@ -134,8 +134,9 @@ Wrappers support **frame stacking**, normalization, and video logging.
 ## Takeaways & Next Steps
 
 * **Reproducibility first:** Docker, tests, and clear config dictionaries cut onboarding time to minutes.
-* **Data matters:** 20 high-quality demos were enough to bootstrap RL; diverse misalignment demos are the next bottleneck.
-* **Future work:** domain randomization for sim-to-real transfer, Vision Transform-based encoders, policy distillation to real UR5e.
+* **Data matters:** 20 high-quality demos were enough to bootstrap RL. Tried **behaviour cloning** with privileged state observations; performance improved notably when demonstrations were collected with the **SpaceMouse** instead of heuristic controllers or keyboard input.
+* Introducing **DAgger** boosted performance further, especially in medium/hard presets where compounding errors are common.
+* **Future Work:** Train RL policy with interventions for quick convergence and test the entire framework on real robot
 
 ---
 
