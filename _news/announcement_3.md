@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Defended Master’s thesis “Robot Learning of Quadrupedal Locomotion on Deformable Terrain” at RWTH Aachen.  
+Defended Master’s thesis “Robot Learning of Quadrupedal Locomotion on Deformable Terrain” at RWTH Aachen.

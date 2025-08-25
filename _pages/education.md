@@ -7,8 +7,8 @@ nav: true
 nav_order: 6
 ---
 
-
 ## RWTH Aachen University {#rwth-aachen-university}
+
 ### Master of Science, Robotic Systems Engineering
 
 **Compulsory Courses:**
@@ -33,8 +33,8 @@ nav_order: 6
 - **Introduction to Artificial Intelligence**
 - **Advanced Machine Learning**
 
-
 **Internship:**
+
 - **Institute:** Fraunhofer IPA, Stuttgart, Germany
 
 **Master Thesis:**
@@ -42,19 +42,22 @@ nav_order: 6
 - **Topic:** Investigating Robot Learning of Quadrupedal Locomotion on Deformable Terrain
 - **Grade:** 1.5
 
-
 ---
 
 <br>
 
-
 ## Shiv Nadar University {#shiv-nadar-university}
+
 ### Bachelor of Technology
+
 #### Major: Mechanical Engineering
+
 #### Minor: Electronics and Comm. Engineering
+
 #### Specilization: Computational Techniques in Mechanical Engineering
 
 **Compulsory Courses:**
+
 - **Introduction to Robotics**
 - Literature, Identity and Theatre 1
 - Carbohydrates and Proteins
@@ -104,13 +107,16 @@ nav_order: 6
 - **Mechanical Vibrations**
 
 **Internship:**
+
 - **Institute:** Nuclear Power Corporation of India Limited, Rawatbhatta, India
 
 **Bachelor Thesis:**
+
 - **Topic:** Dynamics of immiscible fluids in a microchannel under acoustic fields
 - **Grade:** A
 
 **Scholarship:**
+
 - Completed my bachelor engineering program with 100% scholarship across all 8 semesters.
 
 ---
@@ -120,7 +126,9 @@ nav_order: 6
 ## School Education
 
 ### CBSE Class 12
+
 Grade: 460/500 (92%)
 
 ### Tamilnadu State Board Class 10
+
 Grade: 481/500 (96.2%)

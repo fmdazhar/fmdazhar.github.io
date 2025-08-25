@@ -11,27 +11,27 @@ category: work
 
 **Fork of <a href="https://github.com/isri-aist/QpSolverCollection/tree/ros1/">isri‑aist/QpSolverCollection</a> with additional solvers, utilities and examples developed during my work at RWTH‑IRT**
 
-This fork broadens the original library with **Ipopt‑powered nonlinear programming**, several **MPC and NMPC front‑ends**, and a **battery of regression tests** that guard numerical correctness down to the solver back‑end.  Everything – from automatic differentiation to QP factorisation – stays inside C++ templates so you can exploit the full power of modern compilers **without run‑time overhead**.
+This fork broadens the original library with **Ipopt‑powered nonlinear programming**, several **MPC and NMPC front‑ends**, and a **battery of regression tests** that guard numerical correctness down to the solver back‑end. Everything – from automatic differentiation to QP factorisation – stays inside C++ templates so you can exploit the full power of modern compilers **without run‑time overhead**.
 
 ---
 
 ## What’s new in this fork
 
-* **IpoptInterface** – full wrapper around COIN‑OR Ipopt for large‑scale, sparse NLPs.
-* **MpcSolver  ➜** ready‑to‑use linear MPC wrapper.
-* **SQPSolver  ➜** first‑order SQP with pluggable QP back‑ends.
-* **Prototype NMPC module** built on multiple shooting and the SQP core.
-* **Extensive unit tests** (HS071, constrained Rosenbrock, drone attitude control, quadrotor MPC …) 
+- **IpoptInterface** – full wrapper around COIN‑OR Ipopt for large‑scale, sparse NLPs.
+- **MpcSolver  ➜** ready‑to‑use linear MPC wrapper.
+- **SQPSolver  ➜** first‑order SQP with pluggable QP back‑ends.
+- **Prototype NMPC module** built on multiple shooting and the SQP core.
+- **Extensive unit tests** (HS071, constrained Rosenbrock, drone attitude control, quadrotor MPC …)
 
 ---
 
 ## Key ideas
 
-* **Header‑only, no macros** – just add the `include/` folder to your project.
-* **AD everywhere** – gradients, Jacobians and Hessians are generated on‑the‑fly from the same expressions that define your problem.
-* **Dense *or* sparse** – flip a template parameter and every matrix adapts; sparsity patterns are cached once.
-* **Unified NLP façade** – write `cost_impl`, `equality_constraints_impl`, `inequality_constraints_impl`; the base class synthesises the 15 routines Ipopt (or you) may ask for.
-* **Real‑time focus** – every allocation is decided at **compile time**; run‑time heap hits are avoided completely in dense mode.
+- **Header‑only, no macros** – just add the `include/` folder to your project.
+- **AD everywhere** – gradients, Jacobians and Hessians are generated on‑the‑fly from the same expressions that define your problem.
+- **Dense _or_ sparse** – flip a template parameter and every matrix adapts; sparsity patterns are cached once.
+- **Unified NLP façade** – write `cost_impl`, `equality_constraints_impl`, `inequality_constraints_impl`; the base class synthesises the 15 routines Ipopt (or you) may ask for.
+- **Real‑time focus** – every allocation is decided at **compile time**; run‑time heap hits are avoided completely in dense mode.
 
 ---
 
@@ -94,7 +94,7 @@ $$
 \end{aligned}
 $$
 
-All *partial derivatives* are produced automatically.
+All _partial derivatives_ are produced automatically.
 
 ---
 

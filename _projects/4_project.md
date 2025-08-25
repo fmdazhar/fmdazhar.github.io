@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Vessel Dynamics Simulator
-description: Work at RWTH IRT -1 
+description: Work at RWTH IRT -1
 img: assets/img/irt.png
 importance: 5
 category: work
@@ -9,13 +9,12 @@ category: work
 
 ## Overview
 
-A modern C++/Eigen/Boost implementation of a **seven‑state, three‑input** vessel model.  It integrates hull, wind, and current hydrodynamics with live keyboard steering so you can feel how surge (τ₁), sway (τ₂) and yaw (τ₃) interact in real time.
+A modern C++/Eigen/Boost implementation of a **seven‑state, three‑input** vessel model. It integrates hull, wind, and current hydrodynamics with live keyboard steering so you can feel how surge (τ₁), sway (τ₂) and yaw (τ₃) interact in real time.
 
-* **Physics** – nonlinear surge–sway–yaw equations with parameter scaling, Froude‑number lookup tables, and wind‑tunnel coefficients.
-* **Integrators** – choose Heun (default), RK4, or Euler at runtime.
-* **UI** – a minimal *ncurses‑style* keyboard handler lets you bump forces up/down (Shift reverses, Alt cycles step sizes).
-* **Build** – CMake‑based; links Eigen & Boost only.
-
+- **Physics** – nonlinear surge–sway–yaw equations with parameter scaling, Froude‑number lookup tables, and wind‑tunnel coefficients.
+- **Integrators** – choose Heun (default), RK4, or Euler at runtime.
+- **UI** – a minimal _ncurses‑style_ keyboard handler lets you bump forces up/down (Shift reverses, Alt cycles step sizes).
+- **Build** – CMake‑based; links Eigen & Boost only.
 
 The core update routine scales, unscales, and fuses:
 
@@ -37,11 +36,11 @@ $$
 
 where
 
-* \$\boldsymbol\nu = \begin{bmatrix}u & v & r\end{bmatrix}^\top\$ is the velocity vector (surge, sway, yaw‑rate);
-* \$\mathbf{M} = \operatorname{diag}(m\_x, m\_y, I\_z)\$ is the rigid‑body mass matrix;
-* \$\mathbf{C}(\boldsymbol\nu)\$ is the Coriolis/centripetal matrix;
-* \$\mathbf{D}(\boldsymbol\nu)\$ represents nonlinear hydrodynamic damping;
-* \$\boldsymbol\tau\_{\*}\$ denote the force/moment contributions implemented in the code.
+- \$\boldsymbol\nu = \begin{bmatrix}u & v & r\end{bmatrix}^\top\$ is the velocity vector (surge, sway, yaw‑rate);
+- \$\mathbf{M} = \operatorname{diag}(m_x, m_y, I_z)\$ is the rigid‑body mass matrix;
+- \$\mathbf{C}(\boldsymbol\nu)\$ is the Coriolis/centripetal matrix;
+- \$\mathbf{D}(\boldsymbol\nu)\$ represents nonlinear hydrodynamic damping;
+- \$\boldsymbol\tau\_{\*}\$ denote the force/moment contributions implemented in the code.
 
 The earth‑fixed pose update is
 
@@ -63,12 +62,7 @@ $$
 
 ---
 
-
-
-
-
-## Other Work  (FernBin Project)
-
+## Other Work (FernBin Project)
 
 <div class="row justify-content-sm-center">
   <div class="col-sm mt-3 mt-md-0">
@@ -79,14 +73,12 @@ $$
   Contributed to developing a simple matplotlib-based simulation of vessel with surrounding traffic for testing vessel dynamics and planning algorithms.
 </div>
 
+- A ROS 2 package was implemented for publishing **encrypted AIS** messages tailored to the _FernBin_ vessel type. It takes the simulated navigation states from the dynamics core and broadcasts them to ROS2 topics. The node auto‑discovers the simulator via ROS 2 parameters and starts publishing immediately.
 
-* A ROS 2 package was implemented for publishing **encrypted AIS** messages tailored to the *FernBin* vessel type. It takes the simulated navigation states from the dynamics core and broadcasts them to ROS2 topics. The node auto‑discovers the simulator via ROS 2 parameters and starts publishing immediately.
-
-* Implemented **Gilbert–Johnson–Keerthi (GJK) collision detection** modules for convex shapes, integrating robust support function routines into the simulation pipeline. Combined with the Expanding Polytope Algorithm (EPA), it provides real‑time penetration depth calculations and collision response hooks.
+- Implemented **Gilbert–Johnson–Keerthi (GJK) collision detection** modules for convex shapes, integrating robust support function routines into the simulation pipeline. Combined with the Expanding Polytope Algorithm (EPA), it provides real‑time penetration depth calculations and collision response hooks.
 
 ---
 
-Need the code?  <a href="https://github.com/fmdazhar/irt_azhar">Browse the repository on GitHub</a>.
+Need the code? <a href="https://github.com/fmdazhar/irt_azhar">Browse the repository on GitHub</a>.
 
 Pull requests & issues welcome!
-

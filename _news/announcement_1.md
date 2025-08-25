@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Completed B.Tech in Mechanical Engineering (Specialization in Computational Techniques; Minor in Electronics and Communication Engineering) at Shiv Nadar University, India.  
+Completed B.Tech in Mechanical Engineering (Specialization in Computational Techniques; Minor in Electronics and Communication Engineering) at Shiv Nadar University, India.

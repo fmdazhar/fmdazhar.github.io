@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Joined IIITDM Kancheepuram, India as Research Assistant, studying microscale transport under acoustic fields.   
+Joined IIITDM Kancheepuram, India as Research Assistant, studying microscale transport under acoustic fields.

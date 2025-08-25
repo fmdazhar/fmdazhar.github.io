@@ -23,10 +23,9 @@ giscus_comments: false
 | ----------------------- | ---------------------------------------------------------------------------------------- |
 | **Robot model**         | UR5e + Robotiq 2F‑85 gripper added to the original Mink XML assets.                      |
 | **Cartesian Motion**    | Quintic polynomial interpolator for smooth end‑effector paths.                           |
-| **Tele‑operation**      | Re‑worked Teleoperation module with gripper open/close and active tracking shortcuts.           |
-| **Collision avoidance** | Explicit geom pairs (gripper ↔ wall block) enforced via `CollisionAvoidanceLimit`.       |
+| **Tele‑operation**      | Re‑worked Teleoperation module with gripper open/close and active tracking shortcuts.    |
+| **Collision avoidance** | Explicit geom pairs (gripper ↔ wall block) enforced via `CollisionAvoidanceLimit`.      |
 | **Pick & place**        | Scripted waypoint planner that grasps a cube, transports it and releases it at a target. |
-
 
 ---
 
@@ -45,15 +44,14 @@ $$
 
 with
 
-* $\Delta\mathbf{q} = \mathbf{v}\,\Delta t$ (joint displacements over the control period $\Delta t$)
-* $H = \lambda I + \sum_i w_i J_i^\top J_i$ (task Hessian with Levenberg–Marquardt damping $\lambda$ and task weights $w_i$)
-* $c = -\sum_i w_i J_i^\top e_i$ (linear term built from task errors $e_i$)
-* $G, h$ stacked linear inequality constraints enforcing joint, velocity & collision limits
+- $\Delta\mathbf{q} = \mathbf{v}\,\Delta t$ (joint displacements over the control period $\Delta t$)
+- $H = \lambda I + \sum_i w_i J_i^\top J_i$ (task Hessian with Levenberg–Marquardt damping $\lambda$ and task weights $w_i$)
+- $c = -\sum_i w_i J_i^\top e_i$ (linear term built from task errors $e_i$)
+- $G, h$ stacked linear inequality constraints enforcing joint, velocity & collision limits
 
 The QP is assembled in `build_ik()` (see `mink.inverse_kinematics`). Any backend supported by **qpsolvers** — OSQP, QPOASES, etc. — can be selected via the `--solver` CLI flag.
 
 <br>
-
 
 ### Polynomial Time‑Scaling of Cartesian Way‑points
 
@@ -61,9 +59,9 @@ A short sequence of **SE(3) way‑points** is lifted to a smooth, fully‑parame
 
 | Order | Continuity | Blend function $s(\tau)$                  |
 | :---: | :--------: | :---------------------------------------- |
-|   1   |   $C^0$  | $s(\tau)=\tau$                            |
-|   3   |   $C^1$  | $s(\tau)=3\tau^{2}-2\tau^{3}$             |
-|   5   |   $C^2$  | $s(\tau)=6\tau^{5}-15\tau^{4}+10\tau^{3}$ |
+|   1   |   $C^0$    | $s(\tau)=\tau$                            |
+|   3   |   $C^1$    | $s(\tau)=3\tau^{2}-2\tau^{3}$             |
+|   5   |   $C^2$    | $s(\tau)=6\tau^{5}-15\tau^{4}+10\tau^{3}$ |
 
 These polynomials guarantee **zero** velocity (and acceleration for the quintic case) at both the start and the goal, greatly reducing jerk at grasp‑ and release‑events.
 
@@ -74,7 +72,6 @@ T(\tau) = T_0\;\exp\!\bigl\{\,s(\tau)\,\log\bigl(T_0^{-1}T_1\bigr)\bigr\}, \qqua
 $$
 
 Sampling $n$ equidistant points along $s(\tau)$ produces a **C²‑continuous** reference path that can be tracked by the IK controller.
-
 
 ---
 
@@ -89,7 +86,6 @@ Sampling $n$ equidistant points along $s(\tau)$ produces a **C²‑continuous** 
   The pick‑and‑place demo has collision avoidance constraints of arms+gripper collision geoms with the floor. It is fully scripted—no input needed.
 </div>
 
-
 ```
            ┌──────────────┐    1  quintic interpolation (200 steps)
 start pose │ current EE T │ ─────────────────────────────────────► goal queue
@@ -103,20 +99,17 @@ start pose │ current EE T │ ────────────────
 2. **Interpolator:** `PolynomialInterpolator(order=5)` yields a C²‑continuous Cartesian path.
 3. **Solver:** At 200 Hz the IK QP returns joint velocities that respect
 
-   * joint limits (`ConfigurationLimit`)
-   * velocity limits (`VelocityLimit`)
-   * and the **collision constraint with the floor**.
-
-
+   - joint limits (`ConfigurationLimit`)
+   - velocity limits (`VelocityLimit`)
+   - and the **collision constraint with the floor**.
 
 ---
 
-
 ## 🙏 Acknowledgements
 
-* [Mink](https://github.com/kevinzakka/mink) for the task‑space QP solver.
-* [MuJoCo](https://mujoco.org/) for the physics engine & viewer.
-* Universal Robots & Robotiq for STL/OBJ asset files.
+- [Mink](https://github.com/kevinzakka/mink) for the task‑space QP solver.
+- [MuJoCo](https://mujoco.org/) for the physics engine & viewer.
+- Universal Robots & Robotiq for STL/OBJ asset files.
 
 ---
 
