@@ -78,8 +78,8 @@ Currently I’m exploring learning-based control for manipulation and locomotion
   [Coursework]({{ '/education/#rwth-aachen-university' | relative_url }}): Robotic Systems, Advanced Robotic Kinematics and Dynamics, Multibody Dynamics, Advanced ML, Introduction to AI, Computer Vision, RL & Learning-Based Control, Linear Control, Numerical Optimization, etc.
 
 - **[Shiv Nadar University](https://snu.edu.in/home/)** — _B.Tech., Major in Mechanical Engineering_  
-  Minor in Electronics & Communication Engineering, Specialization in Computational Techniques;  
-  [Coursework]({{ '/education/#shiv-nadar-university' | relative_url }}): Introduction to Robotics, Introduction to Computing and Programming, Embedded Systems Hardware, Linear Algebra, Finite Element Methods, Advanced Computer Programming and Numerical Technique, Mechatronics and Control System, Mechanical Vibrations, etc.
+ Minor in Electronics & Communication Engineering, Specialization in Computational Techniques;  
+ [Coursework]({{ '/education/#shiv-nadar-university' | relative_url }}): Introduction to Robotics, Introduction to Computing and Programming, Embedded Systems Hardware, Linear Algebra, Finite Element Methods, Advanced Computer Programming and Numerical Technique, Mechatronics and Control System, Mechanical Vibrations, etc.
 
   </div>
 </details>
