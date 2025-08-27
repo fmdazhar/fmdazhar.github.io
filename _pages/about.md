@@ -38,7 +38,8 @@ Currently I’m exploring learning-based control for manipulation and locomotion
 <details open>
   <summary><strong>Read more about my background</strong></summary>
   <br>
-  <div markdown="1">
+
+<div markdown="1">
 
 ### Learning-based control
 
@@ -81,5 +82,5 @@ Currently I’m exploring learning-based control for manipulation and locomotion
  Minor in Electronics & Communication Engineering, Specialization in Computational Techniques;  
  [Coursework]({{ '/education/#shiv-nadar-university' | relative_url }}): Introduction to Robotics, Introduction to Computing and Programming, Embedded Systems Hardware, Linear Algebra, Finite Element Methods, Advanced Computer Programming and Numerical Technique, Mechatronics and Control System, Mechanical Vibrations, etc.
 
-  </div>
+</div>
 </details>
