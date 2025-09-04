@@ -5,7 +5,7 @@ repo_description_lines_max: 2
 
 github_repos:
   - fmdazhar/ur5e_iff
-  - fmdazhar/mujoco_state
+  - fmdazhar/mujoco_sim
   - fmdazhar/mujoco_vision
   - fmdazhar/demonstration_bc_rl
   - fmdazhar/DeformableIsaac
