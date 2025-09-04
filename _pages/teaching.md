@@ -8,7 +8,7 @@ nav_order: 6
 ---
 
 #### Teaching Assistant
-
+<div id="rwth-teaching"></div>
 **RWTH Institute of Geomechanics and Underground Technology (RWTH GUT)**, Aachen, Germany  
 _April 2023 – September 2023_
 

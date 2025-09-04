@@ -18,9 +18,19 @@ horizontal: false
 
 {% for category in page.display_categories %}
 <a id="{{ category }}" href=".#{{ category }}">
-
-<h2 class="category">{{ category }}</h2>
+  <h2 class="category">{{ category | capitalize }}</h2>
 </a>
+
+{% if category == "work" %}
+<p class="category-description">
+  Projects I’ve worked on professionally or as part of academic research, including robotics, control systems, and deep learning applications.
+</p>
+{% elsif category == "fun" %}
+<p class="category-description">
+  Side projects and experiments where I explore new tech, play with hardware, and tinker with ideas just for fun.
+</p>
+{% endif %}
+
 {% assign categorized_projects = site.projects | where: "category", category %}
 {% assign sorted_projects = categorized_projects | sort: "importance" %}
 
