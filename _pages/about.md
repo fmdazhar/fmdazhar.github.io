@@ -38,7 +38,7 @@ I’m currently **seeking full-time opportunities in robotics**, working with **
 When I’m not working with robots, you’ll find me tinkering with new tech, picking up new sports, or enjoying the outdoors.
 
 <details >
-  <summary><strong><u>Read more about my background</u></strong></summary>
+  <summary><strong><u>Click here to read more about my background</u></strong></summary>
   <br>
 
 <div markdown="1">
@@ -179,3 +179,4 @@ Side projects and experiments where I explore new tech, play with hardware, and 
 
 </div>
 </details>
+<br>
