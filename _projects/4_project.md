@@ -65,12 +65,18 @@ $$
 ## Other Work (FernBin Project)
 
 <div class="row justify-content-sm-center">
-  <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/irt.png" title="Multi-camera image observations" class="img-fluid w-50 rounded z-depth-1" %}
+  <div class="col-sm-6 mt-3 mt-md-0 text-center">
+    {% include figure.liquid path="assets/img/irt.png" title="Vessels Simulation " class="img-fluid w-75 rounded z-depth-1" %}
+    <div class="caption mt-2">
+      Simulation of vessel dynamics with surrounding traffic.
+    </div>
   </div>
-</div>
-<div class="caption">
-  Contributed to developing a simple matplotlib-based simulation of vessel with surrounding traffic for testing vessel dynamics and planning algorithms.
+  <div class="col-sm-6 mt-3 mt-md-0 text-center">
+    {% include figure.liquid path="assets/img/fernbin.jpg" title="Real FernBin Project Vessels" class="img-fluid w-75 rounded z-depth-1" %}
+    <div class="caption mt-2">
+      Actual FernBin project vessels.
+    </div>
+  </div>
 </div>
 
 - A ROS 2 package was implemented for publishing **encrypted AIS** messages tailored to the _FernBin_ vessel type. It takes the simulated navigation states from the dynamics core and broadcasts them to ROS2 topics. The node auto‑discovers the simulator via ROS 2 parameters and starts publishing immediately.

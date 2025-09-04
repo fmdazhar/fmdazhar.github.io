@@ -28,14 +28,16 @@ announcements:
 #   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hey there! 👋  
-I'm a **Robotics Engineer🤖** (M.Sc. Robotic Systems Engineering, RWTH Aachen), passionate and focused on **Deep Robot Learning** and **Optimal Control** to build intelligent, agile robots.
+👋 Hey there!
+I’m a Robotics Engineer (M.Sc. Robotic Systems Engineering, RWTH Aachen) passionate about building intelligent agile robots through deep robot learning and optimal control.
 
-Currently I’m seeking **full-time opportunities** while exploring learning-based control for manipulation and locomotion, building in **PyTorch**/**Jax**, **Python**/**C++**, **ROS1/ROS2**, **Docker**, and simulation stacks like **MuJoCo** and **NVIDIA Isaac Sim/Gym**.
+I have experience developing learning-based controllers (Reinforcement and Imitation learning) for both **manipulation and locomotion**, and complement this with a strong background in classical control and optimization methods.
 
-When I’m not playing with robots, you’ll usually find me learning and [tinkering with new tech](/projects/#fun), picking up new sports, or enjoying time outdoors.
+I’m currently **seeking full-time opportunities in robotics**, working with **PyTorch/JAX, Python/C++, ROS1/ROS2, Docker, and simulation platforms such as MuJoCo and NVIDIA Isaac Sim/Gym**.
 
-<details open>
+When I’m not working with robots, you’ll find me tinkering with new tech, picking up new sports, or enjoying the outdoors.
+
+<details >
   <summary><strong><u>Read more about my background</u></strong></summary>
   <br>
 
@@ -144,35 +146,35 @@ When I’m not playing with robots, you’ll usually find me learning and [tinke
 
 ### Fun
 
-Side projects and experiments where I explore new tech, play with hardware, and tinker with ideas just for fun.
+Side projects and experiments where I explore new tech, play with hardware, and [tinker](/projects/#fun) with ideas just for fun.
+<div class="row mt-3 text-center">
 
-<div style="display: flex; justify-content: space-between; gap: 20px;">
-
-  <div style="flex: 1; text-align: center;">
-    <video width="100%" controls>
-      <source src="/assets/videos/dual_arm_teleop.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <strong>Dual Arm Teleoperation with ROS2 Humble</strong><br>
+  <!-- Dual Arm Teleoperation -->
+  <div class="col-sm">
+    {% include video.liquid path="assets/video/dual_arm_teleop.mp4" class="img-fluid rounded z-depth-1" controls=true %}
+    <div class="caption mt-2">
+      Dual Arm Teleoperation with ROS2 Humble
+    </div>
   </div>
 
-  <div style="flex: 1; text-align: center;">
-    <video width="100%" controls>
-      <source src="/assets/videos/live_edge_detection.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <strong>Edge Detection with ROS Noetic</strong><br>
+  <!-- Edge Detection with ROS -->
+  <div class="col-sm">
+    {% include video.liquid path="assets/video/live_edge_detection.mp4" class="img-fluid rounded z-depth-1" controls=true %}
+    <div class="caption mt-2">
+      Edge Detection with ROS Noetic
+    </div>
   </div>
 
-  <div style="flex: 1; text-align: center;">
-    <video width="100%" controls>
-      <source src="/assets/videos/s_pick_place.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <strong>6-Axis UR5e Robot Collision Avoidance</strong><br>
+  <!-- UR5e Collision Avoidance -->
+  <div class="col-sm">
+    {% include video.liquid path="assets/video/s_pick_place.mp4" class="img-fluid rounded z-depth-1" controls=true %}
+    <div class="caption mt-2">
+      UR5e Motion Planning with MuJoCo
+    </div>
   </div>
 
 </div>
+
 
 
 </div>
