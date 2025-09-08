@@ -510,20 +510,6 @@ ninja.data = [{
           window.open("https://scholar.google.com/citations?user=5BZuW2wAAAAJ&hl", "_blank");
         },
       },{
-        id: 'social-zotero',
-        title: 'Zotero',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://www.zotero.org/fmdazhar", "_blank");
-        },
-      },{
-        id: 'social-discord',
-        title: 'Discord',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://discord.com/users/288937658141376512", "_blank");
-        },
-      },{
       id: 'light-theme',
       title: 'Change theme to light',
       description: 'Change the theme of the site to Light',
