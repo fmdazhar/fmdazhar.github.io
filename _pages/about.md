@@ -47,7 +47,7 @@ When I’m not working with robots, you’ll find me tinkering with new tech, pi
 ### Education
 
 <div style="display: flex; align-items: center; margin-bottom: 15px;">
-  <img src="/assets/img/shiv_nadar.webp" alt="Shiv Nadar Logo" style="width:170px; margin-right:20px;">
+  <img src="/assets/img/shiv_nadar.webp" alt="Shiv Nadar Logo" style="width:200px; margin-right:20px;">
   <div>
     <strong>
       <a href="https://snu.edu.in/home/" target="_blank">Shiv Nadar University</a>
@@ -59,7 +59,7 @@ When I’m not working with robots, you’ll find me tinkering with new tech, pi
 </div>
 
 <div style="display: flex; align-items: center; margin-bottom: 20px;">
-  <img src="/assets/img/rwth.webp" alt="RWTH Aachen Logo" style="width:170px; margin-right:20px;">
+  <img src="/assets/img/rwth.webp" alt="RWTH Aachen Logo" style="width:200px; margin-right:20px;">
   <div>
     <strong>
       <a href="https://www.rwth-aachen.de/go/id/a/?lidx=1" target="_blank">RWTH Aachen University</a>
@@ -75,7 +75,7 @@ When I’m not working with robots, you’ll find me tinkering with new tech, pi
 ### Previous research
 
 <div style="display: flex; align-items: center; margin-bottom: 16px;">
-  <img src="/assets/img/iiitdm.jpg" alt="IIITDM Microscale Transport Lab" style="width:170px; margin-right:20px;">
+  <img src="/assets/img/iiitdm.jpg" alt="IIITDM Microscale Transport Lab" style="width:200px; margin-right:20px;">
   <div>
     <strong><a href="https://sites.google.com/view/iiitdmk-empty-lab" target="_blank" rel="noopener">IIITDM Microscale Transport Laboratory</a></strong> — Acoustic-driven micro-scale fluid dynamics with multiple peer-reviewed <a href="/publications">Publications</a>.<br>
     <small style="opacity:0.75;">
@@ -88,7 +88,7 @@ When I’m not working with robots, you’ll find me tinkering with new tech, pi
 ### Classical control
 
 <div style="display: flex; align-items: center; margin-bottom: 16px;">
-  <img src="/assets/img/fernbin.jpg" alt="Fernbin / RWTH IRT" style="width:170px; margin-right:20px;">
+  <img src="/assets/img/fernbin.jpg" alt="Fernbin / RWTH IRT" style="width:200px; margin-right:20px;">
   <div>
     <strong>Student Assistant — <a href="https://www.irt.rwth-aachen.de/cms/~iung/irt/" target="_blank" rel="noopener">RWTH IRT</a></strong><br>
     Extended a unified C++ interface from QP to NLP solvers with tools for MPC/NMPC/SQP, auto-differentiation, Hessian regularization, etc., and contributed to the <a href="https://www.fernbin.de/en/" target="_blank" rel="noopener">Fernbin</a> ship-control project in Python/ROS2.
@@ -101,7 +101,7 @@ When I’m not working with robots, you’ll find me tinkering with new tech, pi
 </div>
 
 <div style="display: flex; align-items: center; margin-bottom: 16px;">
-  <img src="/assets/img/acdc-thumbnail.png" alt="RWTH ika Research Project" style="width:170px; margin-right:20px;">
+  <img src="/assets/video/acdc-cost.gif" alt="RWTH ika Research Project" style="width:200px; margin-right:20px;">
   <div>
     <strong>Research Project — <a href="https://www.ika.rwth-aachen.de/en/" target="_blank" rel="noopener">RWTH ika</a></strong><br>
     Enhanced autonomous-driving trajectory planning via Model Predictive Control (MPC) by refining cost functions for dynamic elements and explored hard-constraint collision avoidance.
@@ -116,7 +116,7 @@ When I’m not working with robots, you’ll find me tinkering with new tech, pi
 ### Learning-based control
 
 <div style="display: flex; align-items: center; margin-bottom: 16px;">
-  <img src="/assets/img/A1.png" alt="Master’s Thesis Quadruped on Deformable Terrain" style="width:170px; margin-right:20px;">
+  <img src="/assets/video/combined_thesis.gif" alt="Master’s Thesis Quadruped on Deformable Terrain" style="width:200px; margin-right:20px;">
   <div>
     <strong>Master’s Thesis — <a href="https://www.dsme.rwth-aachen.de/" target="_blank" rel="noopener">RWTH DSME</a> × <a href="https://www.gut.rwth-aachen.de/" target="_blank" rel="noopener">RWTH GUT</a></strong><br>
     Tackled the challenges quadruped robots face when navigating deformable terrains, employing NVIDIA Isaac Sim for simulation and a reinforcement learning framework to enable resilient and adaptive locomotion strategies.
@@ -130,7 +130,7 @@ When I’m not working with robots, you’ll find me tinkering with new tech, pi
 </div>
 
 <div style="display: flex; align-items: center; margin-bottom: 16px;">
-  <img src="/assets/img/ipa.png" alt="Fraunhofer IPA Internship" style="width:170px; margin-right:20px;">
+  <img src="/assets/video/ipa.gif" alt="Fraunhofer IPA Internship" style="width:200px; margin-right:20px;">
   <div>
     <strong>Internship — <a href="https://www.ipa.fraunhofer.de/" target="_blank" rel="noopener">Fraunhofer IPA</a></strong><br>
     Developed Peg-in-Hole MuJoCo task environment with control and teleoperation modules and integrated real-time learning (Reinforcement Learning/Imitation Learning) pipelines for human-in-the-loop RL training with a ROS–Flask server for controlling a Robotiq Hand-e gripper-equipped UR5e robot arm.
@@ -142,32 +142,40 @@ When I’m not working with robots, you’ll find me tinkering with new tech, pi
   </div>
 </div>
 
-<!-- ✨ NEW: Fun section with pictures of projects -->
+<!-- ✨ Fun section with pictures of projects -->
 
 ### Fun
 
 Side projects and experiments where I explore new tech, play with hardware, and [tinker](/projects/#fun) with ideas just for fun.
 <div class="row mt-3 text-center">
 
+  <!-- Hackathon Win -->
+  <div class="col-md-6 mb-4">
+    {% include figure.liquid path="assets/video/bmw.gif" class="img-fluid rounded z-depth-1" %}
+    <div class="caption mt-2">
+      Humanoid Manipulation Hackathon Win in BMW Category
+    </div>
+  </div>
+
   <!-- Dual Arm Teleoperation -->
-  <div class="col-sm">
-    {% include video.liquid path="assets/video/dual_arm_teleop.mp4" class="img-fluid rounded z-depth-1" controls=true %}
+  <div class="col-md-6 mb-4">
+    {% include figure.liquid path="assets/video/dual_arm_teleop.gif" class="img-fluid rounded z-depth-1" %}
     <div class="caption mt-2">
       Dual Arm Teleoperation with ROS2 Humble
     </div>
   </div>
 
   <!-- Edge Detection with ROS -->
-  <div class="col-sm">
-    {% include video.liquid path="assets/video/live_edge_detection.mp4" class="img-fluid rounded z-depth-1" controls=true %}
+  <div class="col-md-6 mb-4">
+    {% include figure.liquid path="assets/video/live_edge_detection.gif" class="img-fluid rounded z-depth-1" %}
     <div class="caption mt-2">
       Edge Detection with ROS Noetic
     </div>
   </div>
 
   <!-- UR5e Collision Avoidance -->
-  <div class="col-sm">
-    {% include video.liquid path="assets/video/s_pick_place.mp4" class="img-fluid rounded z-depth-1" controls=true %}
+  <div class="col-md-6 mb-4">
+    {% include figure.liquid path="assets/video/combined_s.gif" class="img-fluid rounded z-depth-1" %}
     <div class="caption mt-2">
       UR5e Motion Planning with MuJoCo
     </div>
