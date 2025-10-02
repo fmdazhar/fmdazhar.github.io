@@ -436,7 +436,18 @@ ninja.data = [{
           section: "News",},{id: "news-attended-automatica-2025-in-munich",
           title: 'Attended automatica 2025 in Munich.',
           description: "",
-          section: "News",},{id: "projects-dual-arm-teleoperation-with-ros2-humble",
+          section: "News",},{id: "news-participating-in-the-stanford-university-human-centered-ai-hai-behavior-challenge",
+          title: 'Participating in the Stanford University Human-Centered AI (HAI) Behavior Challenge.',
+          description: "",
+          section: "News",},{id: "news-won-the-munich-humanoid-manipulation-hackathon",
+          title: 'Won the Munich Humanoid Manipulation Hackathon',
+          description: "",
+          section: "News",},{id: "projects-humanoid-manipulation-hackathon-winner",
+          title: 'Humanoid Manipulation Hackathon Winner',
+          description: "🥇 1st Place at the Munich Humanoid Manipulation Hackathon (BMW Challenge)",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/10_project/";
+            },},{id: "projects-dual-arm-teleoperation-with-ros2-humble",
           title: 'Dual Arm Teleoperation with ROS2 Humble',
           description: "Dual-UR5e teleoperation in ROS2 via keyboard or real-time MediaPipe hand-tracking, packaged in Docker.",
           section: "Projects",handler: () => {
