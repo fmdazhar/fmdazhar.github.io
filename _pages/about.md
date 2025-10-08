@@ -44,7 +44,7 @@ When I’m not working with robots, you’ll find me tinkering with new tech, pi
 <div markdown="1">
 
 
-### Education
+### Bachelor Education
 
 <div style="display: flex; align-items: center; margin-bottom: 15px;">
   <img src="/assets/img/shiv_nadar.webp" alt="Shiv Nadar Logo" style="width:200px; margin-right:20px;">
@@ -58,20 +58,6 @@ When I’m not working with robots, you’ll find me tinkering with new tech, pi
   </div>
 </div>
 
-<div style="display: flex; align-items: center; margin-bottom: 20px;">
-  <img src="/assets/img/rwth.webp" alt="RWTH Aachen Logo" style="width:200px; margin-right:20px;">
-  <div>
-    <strong>
-      <a href="https://www.rwth-aachen.de/go/id/a/?lidx=1" target="_blank">RWTH Aachen University</a>
-    </strong> <span style="color: #555; font-size: 0.95em;">— Aachen, Germany</span><br>
-    <em>M.Sc., Robotic Systems Engineering</em><br>
-    <a href="{{ '/education/#rwth-aachen-university' | relative_url }}">Coursework</a>: Robotic Systems, Advanced Robotic Kinematics and Dynamics, Multibody Dynamics, Advanced ML, Introduction to AI, Computer Vision, RL & Learning-Based Control, Linear Control, Numerical Optimization, etc.
-    <br>
-    <a href="{{ '/teaching/#rwth-teaching' | relative_url }}">Teaching Assistant</a>: Conducted programming tutorial sessions for the <em>"Introduction to Robotics"</em> course.
-    </div>
-</div>
-
-
 ### Previous research
 
 <div style="display: flex; align-items: center; margin-bottom: 16px;">
@@ -83,6 +69,22 @@ When I’m not working with robots, you’ll find me tinkering with new tech, pi
       <a href="https://scholar.google.de/citations?view_op=top_venues&hl=en&vq=phy_fluidmechanics" target="_blank" rel="noopener">see ranking</a>.
     </small>
   </div>
+</div>
+
+
+### Master Education
+
+<div style="display: flex; align-items: center; margin-bottom: 20px;">
+  <img src="/assets/img/rwth.webp" alt="RWTH Aachen Logo" style="width:200px; margin-right:20px;">
+  <div>
+    <strong>
+      <a href="https://www.rwth-aachen.de/go/id/a/?lidx=1" target="_blank">RWTH Aachen University</a>
+    </strong> <span style="color: #555; font-size: 0.95em;">— Aachen, Germany</span><br>
+    <em>M.Sc., Robotic Systems Engineering</em><br>
+    <a href="{{ '/education/#rwth-aachen-university' | relative_url }}">Coursework</a>: Robotic Systems, Advanced Robotic Kinematics and Dynamics, Multibody Dynamics, Advanced ML, Introduction to AI, Computer Vision, RL & Learning-Based Control, Linear Control, Numerical Optimization, etc.
+    <br>
+    <a href="{{ '/teaching/#rwth-teaching' | relative_url }}">Teaching Assistant</a>: Conducted programming tutorial sessions for the <em>"Introduction to Robotics"</em> course.
+    </div>
 </div>
 
 ### Classical control
