@@ -8,14 +8,29 @@ category: work
 giscus_comments: false
 ---
 
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
+<div class="row">
+  <div class="col-sm mt-3 mt-md-0">
     {% include figure.liquid path="assets/img/hackathon2.jpg" title="Winning Team at the Munich Humanoid Manipulation Hackathon" class="img-fluid rounded z-depth-1" %}
   </div>
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid path="assets/img/hackathon.jpg" title="Winning Team at the Munich Humanoid Manipulation Hackathon" class="img-fluid rounded z-depth-1" %}
+  </div>
 </div>
+
+<div class="row">
+
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/hack.jpeg" title="Force-vector overlay" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+
 <div class="caption">
     Our team winning the BMW Group challenge at the Munich Humanoid Manipulation Hackathon.
 </div>
+
+
+
+
 
 Last week, our team—Abhishek Manandhar, Oliver Sanchez, and myself—won the **Munich Humanoid Manipulation Hackathon**, sponsored by BMW Group, NVIDIA, and other leaders in robotics. The challenge was to automate a complex assembly task using a bi-manual system with two Franka Emika robot arms.
 

@@ -88,6 +88,16 @@ Switching level is as simple as selecting the corresponding Gymnasium ID in your
   Live telemetry dashboard with plots track joint positions, velocities, accelerations, TCP pose error, and cumulative reward. The dashboard—implemented with a lightweight UI—enabled immediate diagnosis of issues. Interactive overlay of on-screen sliders permit live tuning of proportional/derivative gains and compliance settings. This tool was essential for quickly damping oscillations during controller testing.
 </div>
 
+
+<div class="row">
+
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/mujoco-11.png" title="Force-vector overlay" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption">
+  Live telemetry dashboard with plots track joint positions, velocities, accelerations, TCP pose error, and cumulative reward. The dashboard—implemented with a lightweight UI—enabled immediate diagnosis of issues. Interactive overlay of on-screen sliders permit live tuning of proportional/derivative gains and compliance settings. This tool was essential for quickly damping oscillations during controller testing.
+</div>
 ---
 
 ## 3 Interactive Tele-op & Data Capture

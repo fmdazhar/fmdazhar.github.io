@@ -53,7 +53,9 @@ When I’m not working with robots, you’ll find me tinkering with new tech, pi
       <a href="https://snu.edu.in/home/" target="_blank">Shiv Nadar University</a>
     </strong> <span style="color: #555; font-size: 0.95em;">— New Delhi, India</span><br>
     <em>B.Tech., Major in Mechanical Engineering</em><br>
-    <em>Minor in Electronics & Communication Engineering, Specialization in Computational Techniques;</em><br>
+    <em>Minor in Electronics & Communication Engineering</em><br>
+    <em>Specialization in Computational Techniques;</em><br>
+
     <a href="{{ '/education/#shiv-nadar-university' | relative_url }}">Coursework</a>: Introduction to Robotics, Introduction to Computing and Programming, Embedded Systems Hardware, Linear Algebra, Finite Element Methods, Advanced Computer Programming and Numerical Technique, Mechatronics and Control System, Mechanical Vibrations, etc.
   </div>
 </div>
@@ -144,6 +146,8 @@ When I’m not working with robots, you’ll find me tinkering with new tech, pi
   </div>
 </div>
 
+<br>
+
 <!-- ✨ Fun section with pictures of projects -->
 
 ### Fun
@@ -159,14 +163,6 @@ Side projects and experiments where I explore new tech, play with hardware, and 
     </div>
   </div>
 
-  <!-- Dual Arm Teleoperation -->
-  <div class="col-md-6 mb-4">
-    {% include figure.liquid path="assets/video/dual_arm_teleop.gif" class="img-fluid rounded z-depth-1" %}
-    <div class="caption mt-2">
-      Dual Arm Teleoperation with ROS2 Humble
-    </div>
-  </div>
-
   <!-- Edge Detection with ROS -->
   <div class="col-md-6 mb-4">
     {% include figure.liquid path="assets/video/live_edge_detection.gif" class="img-fluid rounded z-depth-1" %}
@@ -175,18 +171,30 @@ Side projects and experiments where I explore new tech, play with hardware, and 
     </div>
   </div>
 
-  <!-- UR5e Collision Avoidance -->
-  <div class="col-md-6 mb-4">
-    {% include figure.liquid path="assets/video/combined_s.gif" class="img-fluid rounded z-depth-1" %}
+</div>
+
+<div class="row">
+  <!-- Dual Arm Teleoperation -->
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid path="assets/video/dual_arm_teleop.gif" class="img-fluid rounded z-depth-1" %}
     <div class="caption mt-2">
-      UR5e Motion Planning with MuJoCo
+      Dual Arm Teleoperation with ROS2 Humble
     </div>
   </div>
+</div>
+
+<div class="row">
+  <!-- UR5e Collision Avoidance -->
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid path="assets/video/combined_s.gif" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+<div class="caption mt-2">
+  UR5e Motion Planning with MuJoCo
+</div>
 
 </div>
 
-
-
-</div>
 </details>
+
 <br>
