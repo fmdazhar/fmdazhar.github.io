@@ -2,7 +2,7 @@
 layout: page
 title: Investigating Robot Learning of Quadrupedal Locomotion on Deformable Terrain
 description: M.Sc. thesis - GPU-accelerated Isaac Sim workspace that couples Position-Based Dynamics (PBD) gravel simulation with a curriculum-driven PPO policy to achieve robust, energy-efficient locomotion across soft, uneven, and granular ground.
-img: assets/img/thesis-2.jpg
+img: assets/img/thesis-2.jpg     
 importance: 1
 category: work
 giscus_comments: false
@@ -27,26 +27,28 @@ giscus_comments: false
   My poster presentation at German Robotics Conference 2025
 </div>
 
-> **News (March 2025)** – A preliminary extension of this framework was accepted as a short paper at the **German Robotics Conference 2025 (GRC 2025)**.
-> Read the extended abstract <a href="/assets/pdf/grc25.pdf" target="_blank" rel="noopener">here</a>.
-> Read the poster <a href="/assets/pdf/azhar_poster_A0.pdf" target="_blank" rel="noopener">here</a>.
+
+> **News (March 2025)** – A preliminary extension of this framework was accepted as a short paper at the **German Robotics Conference 2025 (GRC 2025)**.<br>
+> Read the extended abstract <a href="/assets/pdf/grc25.pdf" target="_blank" rel="noopener">here</a><br>
+> Read the poster <a href="/assets/pdf/azhar_poster_A0.pdf" target="_blank" rel="noopener">here</a>
+
+[Download the thesis presentation (PPTX)](https://docs.google.com/presentation/d/1gzcxyUZIKREKPha7YfZeOQMIF22Jrnxr/edit?usp=sharing&ouid=107343621726063156502&rtpof=true&sd=true){:target="_blank" rel="noopener"}  
 
 This project is the deliverable of my M.Sc. thesis at RWTH Aachen.  
 It packages **an end-to-end pipeline—simulation, reinforcement-learning (RL), evaluation, and visualisation—for training quadruped robots to handle deformable terrain** such as sand, gravel, and soft soil.  
 Built around **NVIDIA Isaac Sim** and **OmniIsaacGymEnvs**, the workspace brings together:
 
-- **Position-Based Dynamics (PBD)** particles for real-time granular media.
-- Massive-parallel **Proximal Policy Optimization** (PPO).
-- An automatic **terrain curriculum** that graduates from rigid slopes to particle-filled depressions.
-- **Domain randomisation** (friction, density, adhesion, external pushes) for sim-to-real transfer.
-- Integrated metrics dashboards and helper scripts for reward-curve replay and inference video capture.
+* **Position-Based Dynamics (PBD)** particles for real-time granular media.  
+* Massive-parallel **Proximal Policy Optimization** (PPO).  
+* An automatic **terrain curriculum** that graduates from rigid slopes to particle-filled depressions.  
+* **Domain randomisation** (friction, density, adhesion, external pushes) for sim-to-real transfer.  
+* Integrated metrics dashboards and helper scripts for reward-curve replay and inference video capture.
 
-> _“The adoption of PBD allowed for a more accurate and computationally efficient simulation of granular interactions, facilitating real-time training and testing of RL policies.”_
+> *“The adoption of PBD allowed for a more accurate and computationally efficient simulation of granular interactions, facilitating real-time training and testing of RL policies.”*
 
 ---
 
 ### Motivation - Experiments
-
 <div class="row mt-3">
   <div class="col-sm mt-3 mt-md-0">
       {% include video.liquid path="assets/video/thesis-4.mp4" class="img-fluid rounded z-depth-1" controls=true %}
@@ -67,11 +69,14 @@ Built around **NVIDIA Isaac Sim** and **OmniIsaacGymEnvs**, the workspace brings
   Yet the moment speed or terrain complexity (gravel or sand‑gravel mix) increased, it failed to stay upright.These early “misadventures” exposed the raw difficulty of deformable‑terrain locomotion and cemented the need for a learned, terrain‑aware policy.  
 </div>
 
+
+
 ---
 
 ### Methodology
 
-- **Deformable-Terrain Simulator for locomotion** – Spawns ∼200 k PBD particles inside mesh “depressions” in Isaac Sim, and refits BVH on-the-fly, with two-way robot-terrain contacts.
+* **Deformable-Terrain Simulator for locomotion** – Spawns ∼200 k PBD particles inside mesh “depressions” in Isaac Sim, and refits BVH on-the-fly, with two-way robot-terrain contacts.
+
 
 <div class="row mt-3">
   <!-- Left column: thesis-3.png on top, thesis-5.mp4 below -->
@@ -100,33 +105,35 @@ Built around **NVIDIA Isaac Sim** and **OmniIsaacGymEnvs**, the workspace brings
   </div>
 </div>
 
-| Component                | Details                                                                                                                |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
-| **State Vector (188 D)** | Base lin/ang vel, gravity vec, 12 joint pos + vel, previous action, 140-cell height grid.                              |
-| **Action Space (12 D)**  | Joint-angle offsets; torques clipped to ±80 N m.                                                                       |
-| **Rewards**              | Velocity tracking, torque/accel regularisers, stumble penalty, peak-contact penalty; airtime term disabled in Phase 2. |
+| Component | Details |
+|-----------|---------|
+| **State Vector (188 D)** | Base lin/ang vel, gravity vec, 12 joint pos + vel, previous action, 140-cell height grid. |
+| **Action Space (12 D)** | Joint-angle offsets; torques clipped to ±80 N m. |
+| **Rewards** | Velocity tracking, torque/accel regularisers, stumble penalty, peak-contact penalty; airtime term disabled in Phase 2. |
 
-- **Two-Stage RL Curriculum** –
-  - **Phase 1**: 2000 epochs on rigid terrain; velocity curriculum + airtime / collision / stumble / other rewards.
-  - **Phase 2**: gravel only; dynamic particle material properties randomisation every 20 s to boost policy generalization.
-  <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-      {% include figure.liquid loading="eager" path="assets/img/thesis-1.png" title="Force-vector overlay" class="img-fluid rounded mx-auto d-block w-75 z-depth-1" %}
-    </div>
+
+* **Two-Stage RL Curriculum** –  
+  * **Phase 1**: 2000 epochs on rigid terrain; velocity curriculum + airtime / collision / stumble / other rewards.  
+  * **Phase 2**: gravel only; dynamic particle material properties randomisation every 20 s to boost policy generalization.  
+<div class="row">
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/thesis-1.png" title="Force-vector overlay" class="img-fluid rounded mx-auto d-block w-75 z-depth-1" %}
   </div>
-  <div class="caption">
-    Overall structure of our learning framework.
-  </div>
-- **Velocity-Aware Command Curriculum** – Command ranges auto-scale when average reward > 80 % of max, enabling safe exploration without premature falls.
-- **Benchmark Replication** – Re‑implemented the “Learning to Walk in Minutes” baseline in both **Isaac Gym** and **Isaac Sim**. Average episodic‑reward curves overlap within ±2 %, confirming that migrating to Isaac Sim’s richer GUI incurs no learning penalty.
+</div>
+<div class="caption">
+  Overall structure of our learning framework.
+</div>
+* **Velocity-Aware Command Curriculum** – Command ranges auto-scale when average reward > 80 % of max, enabling safe exploration without premature falls.
+* **Benchmark Replication** – Re‑implemented the “Learning to Walk in Minutes” baseline in both **Isaac Gym** and **Isaac Sim**. Average episodic‑reward curves overlap within ±2 %, confirming that migrating to Isaac Sim’s richer GUI incurs no learning penalty. 
+
 
 ---
 
 ### Terrain Curriculum
 
-- **Rigid Section** – Mix of slopes (±25 °), stairs (0.3 m × 0.2 m), and 0.2 m random obstacles.
-- **Granular Section** – Central 4 × 4 m pit filled with 2 mm PBD spheres (ρ = 2000 kg m⁻³, μ = 0.35).
-- Agents graduate when average episode reward exceeds threshold; otherwise regress, while preventing catastrophic forgetting.
+* **Rigid Section** – Mix of slopes (±25 °), stairs (0.3 m × 0.2 m), and 0.2 m random obstacles. 
+* **Granular Section** – Central 4 × 4 m pit filled with 2 mm PBD spheres (ρ = 2000 kg m⁻³, μ = 0.35).  
+* Agents graduate when average episode reward exceeds threshold; otherwise regress, while preventing catastrophic forgetting. 
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
@@ -142,9 +149,11 @@ Built around **NVIDIA Isaac Sim** and **OmniIsaacGymEnvs**, the workspace brings
   Side-by-side: Phase 1 (left) and Phase 2 Terrain Curriculum (right).
 </div>
 
+
 ---
 
 ### Results Highlights
+
 
 <div class="row mt-3">
   <div class="col-12 col-md-10 col-lg-8 mx-auto text-center">
@@ -155,23 +164,15 @@ Built around **NVIDIA Isaac Sim** and **OmniIsaacGymEnvs**, the workspace brings
   One-take inference run: 1 m/s trot through a 6 × 6 m gravel pit.
 </div>
 
-#### Key metrics summary
+This project successfully trained a quadruped robot to walk on fully deformable terrain simulated with PBD particles in Isaac Sim. The final policy demonstrates a clear ability to maintain balance and achieve a stable trot across a gravel pit.
 
-<div class="table-responsive" markdown="1">
+Compared to a baseline model, our two-phase training curriculum produced a significantly more energy-efficient and stable robot.
 
-| Metric †                                      | Benchmark (replicated) | Phase 1 (rigid terrains) | Phase 2 (PBD gravel) |
-| --------------------------------------------- | ---------------------: | -----------------------: | -------------------: |
-| **Mean power consumption**                    |                 309.92 |                   179.13 |               199.89 |
-| **Cost of Transport (CoT)**                   |                   2.00 |                     0.38 | — _slightly ↑ vs P1_ |
-| **Mean foot contact force**                   |                  18.27 |                    30.87 | — _slightly ↓ vs P1_ |
-| **Base angular vel. (XY) MSE** (mean ± SD)    |                      — |          1.7539 ± 4.7669 |      1.6875 ± 1.7753 |
-| **Joint position MSE (all DOFs)** (mean ± SD) |                      — |          1.3894 ± 0.6691 |      1.3297 ± 0.5849 |
+Phase 1 (Rigid Terrains): The initial training phase on rigid surfaces dramatically improved energy efficiency. The robot learned a smoother gait that reduced power consumption to nearly half that of the baseline, resulting in a Cost of Transport (CoT) that was over five times better. This shows the effectiveness of our reward structure in promoting efficient movement.
 
-</div>
+Phase 2 (PBD Gravel): Fine-tuning on granular terrain further refined the robot's stability. While this required slightly more power than walking on flat ground, the robot became much more sure-footed. It exhibited tighter control over its body orientation and more precise joint tracking, leading to fewer balance errors and more accurate foot placement on the shifting gravel.
 
-† Mean over all four legs.
-
-> **Bottom line:** Phase 2 tightens orientation & joint-tracking errors (lower means and much lower std in angular-XY; lower joint-pos MSE), **at a higher power draw** on granular terrain than Phase 1 – to our knowledge the first Isaac Sim quadruped successfully demonstrated on fully deformable PBD terrain.
+In short, the training pipeline produced a policy that is not only robust enough to handle deformable ground but also remarkably efficient and stable in its movements. 🤖
 
 ---
 
@@ -182,11 +183,10 @@ Due to GPU memory/throughput constraints, we were unable to scale the granular-t
 ---
 
 ### Ongoing Work
-
-- **Cloud-scale simulation & training** — Containerize the workspace and orchestrate Isaac Sim + PPO across multi-GPU cloud platforms to scale PBD particle counts/terrain size and expand experience collection.
-- **Terrain‑adaptive velocity curriculum** for enabling high speed locomotion training
-- **Privileged student–teacher transfer** and **adaptation module** for rapid sim-to-real adaptation.
-- **SAC + online adaptation** to cut sample complexity on CPU-bound particle sims.
+* **Cloud-scale simulation & training** — Containerize the workspace and orchestrate Isaac Sim + PPO across multi-GPU cloud platforms to scale PBD particle counts/terrain size and expand experience collection.
+* **Terrain‑adaptive velocity curriculum** for enabling high speed locomotion training
+* **Privileged student–teacher transfer** and **adaptation module** for rapid sim-to-real adaptation.  
+* **SAC + online adaptation** to cut sample complexity on CPU-bound particle sims.  
 
 <div class="row mt-3">
   <div class="col-sm mt-3 mt-md-0">
@@ -209,7 +209,13 @@ Due to GPU memory/throughput constraints, we were unable to scale the granular-t
 
 ---
 
-### References
 
-- [Download the full thesis (PDF)](/assets/pdf/thesis.pdf){:target="\_blank" rel="noopener"}
-- [Download the thesis presentation (PPTX)](https://docs.google.com/presentation/d/1ToU-vxQdC7f644G2BSDjZgR_LJkHxd22/edit?usp=sharing&ouid=107343621726063156502&rtpof=true&sd=true){:target="\_blank" rel="noopener"}
+
+
+
+
+
+
+
+
+
